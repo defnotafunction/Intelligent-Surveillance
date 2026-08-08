@@ -1,0 +1,2 @@
+# Intelligent Surveillance
+- This project will initially consist of sensors such as a camera, microphone, and a controller. It will output data using a speaker. It will have features such as human detection, facial recognition (W.I.P)
