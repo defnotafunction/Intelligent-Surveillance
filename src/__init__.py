@@ -1,3 +1,3 @@
-from . import camera, controller, sound_analyzer, facial_recognition
+from . import camera, controller, microphone, facial_recognition, main, execeptions
 
-__all__ = ['camera', 'controller', 'sound_analyzer', 'facial_recognition']
+__all__ = ['camera', 'controller', 'microphone', 'facial_recognition', 'main', 'execeptions']
