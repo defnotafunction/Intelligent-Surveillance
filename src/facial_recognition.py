@@ -1,6 +1,6 @@
 from deepface import DeepFace
 from numpy import ndarray
-from os import path, listdir, remove
+from os import path, listdir, remove, makedirs
 from numpy import save, load
 from sklearn.cluster import DBSCAN
 import json
@@ -14,11 +14,41 @@ class FaceAnalyzer:
             min_samples=1,  # One face can be its own cluster
             n_jobs=-1  # Uses all processors
         )
-
+        self.create_missing_folders()
+        
         known_face_data_path = path.join(BASE_DIR, 'data', 'face_to_data', 'known_face_data.json')
-        with open(known_face_data_path, "r") as file:
-            self.data_of_known_faces = json.load(file)
-         
+
+        # IN CASE FILE IS EMPTY
+        try:
+            with open(known_face_data_path, "r", encoding="utf-8") as file:
+                self.data_of_known_faces = json.load(file)
+        except json.JSONDecodeError:
+            self.data_of_known_faces = {}
+
+    def create_missing_folders_and_files(self) -> None:
+        """Creates folders and files that the FaceAnalyzer class needs to use."""
+
+        required_folders = [
+            path.join(BASE_DIR, 'data', 'face_arrays'),
+            path.join(BASE_DIR, 'data', 'face_arrays', 'known_faces'),
+            path.join(BASE_DIR, 'data', 'face_arrays', 'unknown_faces'),
+            path.join(BASE_DIR, 'data', 'face_to_data'),
+            path.join(BASE_DIR, 'data', 'models')
+
+        ]
+
+        required_files = [
+            path.join(BASE_DIR, 'data', 'face_to_data', 'known_face_data.json')
+        ]
+
+        for folder in required_folders:
+            makedirs(folder, exist_ok=True)
+
+        for file in required_files:
+            if not path.exists(file):
+                with open(file, "w", encoding="utf-8") as file:
+                    pass
+        
     def get_faces_match(self, img1: ndarray, img2: ndarray) -> bool:
         """
         Checks if the two images include the same face.
