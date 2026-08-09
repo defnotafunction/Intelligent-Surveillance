@@ -1,0 +1,9 @@
+opencv-python
+SpeechRecognition
+pyttsx3
+pygame
+deepface
+numpy
+scikit-learn
+vosk
+PyAudio

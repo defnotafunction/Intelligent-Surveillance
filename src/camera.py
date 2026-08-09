@@ -99,8 +99,6 @@ class Camera:
                     text = self._speech_recognizer.recognize_vosk(audio)
                     text = text.lower()
 
-                    logging.debug(text)
-
                     if 'my name is' in text:
                         person_name = text.replace('my name is', '')
                         self._face_analyzer.remember_face(colored_face, person_name)
