@@ -8,3 +8,11 @@
     - OpenCv's installation folder didn't include the haarcascade model, had to manually install it myself.
     - Deepface's verification can take some time so I'm planning on using the threading library for methods that use it.
         - Multithreading was not needed, just calling methods with Deepface once every period should be enough.
+
+## [8/9/2026]
+- **Thoughts**:
+    - Face recognition is close to being finished, once enabling the option to remember faces, the program will listen for the phrase "My name is" and extract the text after it then store that face into known faces then store the name into face_to_data, the face and name are linked by a shared number. This was a huge step in this project.
+        - e.g "known_face1.npy" in known_faces and "Face1" in known_face_data.json
+    
+
+- **Problems and Fixes**: 

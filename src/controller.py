@@ -23,6 +23,9 @@ class ControllerManager:
                 if event.button == 0:
                     return 'QUIT'
 
+                elif event.button == 1:
+                    return 'REMEMBER'
+
     def kill(self) -> None:
         """Shuts down all pygame modules."""
         pygame.joystick.quit()
