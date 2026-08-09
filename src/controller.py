@@ -1,4 +1,3 @@
-from .execeptions import ControllerNotFoundError
 import logging
 import pygame
 
@@ -22,8 +21,8 @@ class ControllerManager:
             if event.type == pygame.JOYBUTTONDOWN:
                 # TODO: Remember to replace indented code with actual methods and settings instead of print functions
                 if event.button == 0:
-                    logging.debug('Button 0 Pressed!')
-                    
+                    return 'QUIT'
+
     def kill(self) -> None:
         """Shuts down all pygame modules."""
         pygame.joystick.quit()

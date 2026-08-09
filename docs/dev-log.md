@@ -10,6 +10,6 @@
         - Recording and alarm feature that activates during certain events
 
 ## [8/8/2026]
-- **Work done**: Used functions and classes to abstract code, implemented logging, and added files like main.py, execeptions.py, and camera.log. I also started on handling controller inputs.
-- **Challenges**: None.
-- **Future steps**: Now that the basics of the controller handling is finished, I will start on facial recognition features and storing data for each authenticated face, unknown faces will be tracked using density clustering.
+- **Work done**: Used functions and classes to abstract code, implemented logging, and added files like main.py, execeptions.py, and camera.log. I also added a data folder containing known and unknown faces for the program to use. I created the base for detecting controller inputs. I implemented face detection, and started on facial recognition and tracking unknown faces.
+- **Challenges**: Deepface is computationally expensive to run, I am planning to use a multithreading library in order for this project to be able to be ran on less powerful devices.
+- **Future steps**: Now that the basics of the controller handling is finished, I will further develop facial recognition features and storing data for each authenticated face, and unknown faces will be tracked using density clustering.
