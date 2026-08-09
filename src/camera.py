@@ -3,7 +3,6 @@ from .controller import ControllerManager, get_any_controllers_connected
 from .facial_recognition import FaceAnalyzer
 import logging
 import random
-import threading
 from os import path
 
 class Camera:
@@ -53,33 +52,34 @@ class Camera:
                 x, y, w, h = box
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-    def _handle_face_detecting(self, frame) -> None:
+    def _handle_face_detecting(self, frame, frames_ran: int) -> None:
         """
         Runs all pedestrian dectection related events.
         
         Args:
             frame: A numpy array deriving from the VideoCapture's read method.
+            frames_ran: An integer that holds how many frames have been captured since running.
         """
         grayscaled_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         detected_faces = self._face_casacde.detectMultiScale(grayscaled_frame, scaleFactor=1.1, minNeighbors=5, minSize=(50, 50))
 
         for (x, y, w, h) in detected_faces:
             colored_face = frame[y:y+h, x:x+w]
+            cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
-            if self._face_analyzer.get_face_is_in_known_faces(colored_face):
-                cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            if frames_ran % 100 == 0:
+                if self._face_analyzer.get_face_is_in_known_faces(colored_face):
+                    pass  # TODO: REPLACE WITH FACIAL RECOGNITION LOGIC
 
-            elif self._face_analyzer.get_face_is_in_unknown_faces(colored_face):
-                cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
+                elif self._face_analyzer.get_face_is_in_unknown_faces(colored_face):
+                    chance_to_capture = 0.1  # Ten percent (random.random returns a float value between 0 and 1)
+                    if random.random() <= chance_to_capture:
+                        self._face_analyzer.save_unknown_face(colored_face)
 
-                # Every once in a while keep collecting data for already stored unknown face
-                if random.random() <= 0.01:
+                else:
+                    # If detected face isn't stored at all, automatically store it in unknown faces.
+                    cv2.rectangle(frame, (x, y), (x+w, y+h), (128, 128, 128), 2)
                     self._face_analyzer.save_unknown_face(colored_face)
-
-            else:
-                # If detected face isn't stored at all, automatically store it in unknown faces.
-                cv2.rectangle(frame, (x, y), (x+w, y+h), (128, 128, 128), 2)
-                self._face_analyzer.save_unknown_face(colored_face)
 
     def run(self) -> None:
         """Captures live video frames and detects pedistrians."""
@@ -96,8 +96,7 @@ class Camera:
 
             self._handle_pedestrian_detection(frame, confidence_threshold=0.8)
 
-            # TODO: Multithreading because Deepface face verification can take time and delay video
-            self._handle_face_detecting(frame)
+            self._handle_face_detecting(frame, frames_ran=frames_ran)
             
             cv2.imshow('Original Live Feed', frame)
             if (

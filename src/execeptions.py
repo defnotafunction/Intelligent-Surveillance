@@ -1,5 +1,6 @@
 import logging
 from logging.handlers import TimedRotatingFileHandler
+import sys
 
 # LOGGING
 file_handler = TimedRotatingFileHandler(
@@ -9,7 +10,10 @@ file_handler = TimedRotatingFileHandler(
     backupCount=7,
 )
 
-logging.basicConfig(level=logging.DEBUG, handlers=[file_handler], format='%(asctime)s - %(levelname)s - %(message)s')
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setLevel(logging.DEBUG)
+
+logging.basicConfig(level=logging.DEBUG, handlers=[file_handler, console_handler], format='%(asctime)s - %(levelname)s - %(message)s')
 
 # CUSTOM EXECEPTIONS
 class ControllerNotFoundError(Exception):
