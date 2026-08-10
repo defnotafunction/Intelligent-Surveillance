@@ -2,11 +2,13 @@ import cv2
 from .controller import ControllerManager, get_any_controllers_connected
 from .facial_recognition import FaceAnalyzer
 from .alarm import AlarmManager
+from.recorder import Recorder
 import logging
 import random
-from os import path
+from os import path, makedirs
 import speech_recognition as sr
 import pyttsx3
+from datetime import datetime
 
 class Camera:
     def __init__(self, curfew_start_hour: int, curfew_duration_in_hours: int) -> None:
@@ -44,6 +46,7 @@ class Camera:
         self.face_remembering_enabled = False  # Determines whether program will begin remembering faces or not
         self._speech_recognizer = sr.Recognizer()  # SPEECH TO TEXT
         self._tts_engine = pyttsx3.init()  # TEXT TO SPEECH
+        self._recorder = Recorder(self._cap)
 
     def _get_controller(self) -> tuple[ControllerManager | None]:
         """Returns a ControllerManager object if a controller is detected, otherwise it returns None. Used to adapt to disconnections and reconnections."""
@@ -146,6 +149,9 @@ class Camera:
 
             if self._person_is_visible and self._alarm_manager.get_now_is_curfew():
                 self._alarm_manager.play_alarm()
+                self._recorder.write(frame)
+            else:
+                self._recorder.reset()
 
             cv2.putText(
                 frame,

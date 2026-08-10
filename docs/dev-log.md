@@ -20,6 +20,6 @@
 - **Future steps**: Tracking and identifying unknown faces using density clustering, implementing a recording and alarm feature.
 
 ## [8/10/2026]
-- **Work done**: Create alarm.py and the AlarmManager class, the program now plays an alarm when someone is spotted during user-defined curfew hours.
+- **Work done**: Create alarm.py, recorder.py, the Recorder and AlarmManager class, the program now plays an alarm and records a video when someone is spotted during user-defined curfew hours.
 - **Challenges**: ...
 - **Future steps**: ...
