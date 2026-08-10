@@ -4,6 +4,8 @@ from os import path, listdir, remove, makedirs
 from numpy import save, load
 from sklearn.cluster import DBSCAN
 import json
+import cv2
+import logging
 
 SRC_DIR = path.dirname(path.abspath(__file__)) 
 BASE_DIR = path.dirname(SRC_DIR)
@@ -14,7 +16,7 @@ class FaceAnalyzer:
             min_samples=1,  # One face can be its own cluster
             n_jobs=-1  # Uses all processors
         )
-        self.create_missing_folders()
+        self.create_missing_folders_and_files()
         
         known_face_data_path = path.join(BASE_DIR, 'data', 'face_to_data', 'known_face_data.json')
 
@@ -49,22 +51,33 @@ class FaceAnalyzer:
                 with open(file, "w", encoding="utf-8") as file:
                     pass
         
-    def get_faces_match(self, img1: ndarray, img2: ndarray) -> bool:
+    def get_faces_match(self, img1: ndarray, img2: ndarray, threshold: float = 0.35) -> bool:
         """
         Checks if the two images include the same face.
 
         Args:
             img1: An array representing an image to compare with the second.
             img2: An array representing image to compare with the first.
+            threshold: An integer between 0 and 1, if the distance between the images are less than the threshold, then the function will return True.
         
         Returns:
             A boolean indicating whether the two images include the same face
         """
 
-        try:
-            return DeepFace.verify(img1.copy(), img2.copy())['verified']  # Use copies of the images to prevent memory locking
-        except:
-            return None
+        # CONVERT BGR ARRAYS INTO RGB
+        rgb_img1 = cv2.cvtColor(img1.copy(), cv2.COLOR_BGR2RGB)
+        rgb_img2 = cv2.cvtColor(img2.copy(), cv2.COLOR_BGR2RGB)
+
+        distance = DeepFace.verify(
+            rgb_img1,
+            rgb_img2,
+            enforce_detection=False,
+            detector_backend='skip',  # Skips detecting face because image is already an array of a cropped face
+            model_name='SFace'
+            )['distance']
+
+        return distance <= threshold
+        
 
     def save_unknown_face(self, unknown_face: ndarray) -> None:
         """
@@ -118,7 +131,7 @@ class FaceAnalyzer:
             file_path = path.join(folder_path, file_name)
             face_array = load(file_path)
 
-            if DeepFace.verify(face_array, face, detector_backend='skip'):  # Skip face detecting since face should be an array already.
+            if self.get_faces_match(face_array, face):  # Skip face detecting since face should be an array already.
                 remove(file_path)
 
     def get_face_is_in_unknown_faces(self, face: ndarray) -> bool:
@@ -137,7 +150,7 @@ class FaceAnalyzer:
             file_path = path.join(folder_path, file_name)
             face_array = load(file_path)
 
-            if DeepFace.verify(face_array, face, detector_backend='skip'):  # Skip face detecting since face should be an array already.
+            if self.get_faces_match(face_array, face): 
                 return True
 
         return False
@@ -158,7 +171,7 @@ class FaceAnalyzer:
             file_path = path.join(folder_path, file_name)
             face_array = load(file_path)
 
-            if DeepFace.verify(face_array, face, detector_backend='skip'):
+            if self.get_faces_match(face_array, face):
                 return True
 
         return False
@@ -194,7 +207,7 @@ class FaceAnalyzer:
             file_path = path.join(folder_path, file_name)
             face_array = load(file_path)
 
-            if DeepFace.verify(face_array, face, detector_backend='skip'):
+            if self.get_faces_match(face_array, face):
                 face_number = file_name[10:-4]
                 break
 

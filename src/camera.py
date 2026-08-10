@@ -74,23 +74,6 @@ class Camera:
         for (x, y, w, h) in detected_faces:
             colored_face = frame[y:y+h, x:x+w]
             cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
-            
-            # Below includes computationally expensive methods that uses Deepface
-            if frames_ran % 100 == 0:
-                if self._face_analyzer.get_face_is_in_known_faces(colored_face):
-                    person_name = self._face_analyzer.get_name_of_known_face(colored_face)
-                    self._tts_engine.say(f'Hello {person_name}')
-                    self._tts_engine.runAndWait()
-
-                elif self._face_analyzer.get_face_is_in_unknown_faces(colored_face):
-                    chance_to_capture = 0.1  # Ten percent (random.random returns a float value between 0 and 1)
-                    if random.random() <= chance_to_capture:
-                        self._face_analyzer.save_unknown_face(colored_face)
-
-                else:
-                    # If detected face isn't stored at all, automatically store it in unknown faces.
-                    cv2.rectangle(frame, (x, y), (x+w, y+h), (128, 128, 128), 2)
-                    self._face_analyzer.save_unknown_face(colored_face)
 
             if self.face_remembering_enabled:
                 with sr.Microphone() as source:
@@ -102,6 +85,28 @@ class Camera:
                     if 'my name is' in text:
                         person_name = text.replace('my name is', '')
                         self._face_analyzer.remember_face(colored_face, person_name)
+
+            # Below includes computationally expensive methods that uses Deepface
+            if frames_ran % 100 == 0:
+                if self._face_analyzer.get_face_is_in_known_faces(colored_face):
+                    person_name = self._face_analyzer.get_name_of_known_face(colored_face)
+                    self._tts_engine.say(f'Hello {person_name}')
+                    self._tts_engine.runAndWait()
+                    self._tts_engine = pyttsx3.Engine()  # Engine can't run say more than once for some reason
+
+                elif self._face_analyzer.get_face_is_in_unknown_faces(colored_face): 
+                    # Track unknown faces every once in a while
+                    chance_to_capture = 0.1  # Ten percent (random.random returns a float value between 0 and 1)
+                    random_float = random.random()
+                    if random_float <= chance_to_capture:
+                        self._face_analyzer.save_unknown_face(colored_face)
+
+                else:
+                    # If detected face isn't stored at all, automatically store it in unknown faces.
+                    cv2.rectangle(frame, (x, y), (x+w, y+h), (128, 128, 128), 2)
+                    self._face_analyzer.save_unknown_face(colored_face)
+
+            
 
     def run(self) -> None:
         """Captures live video frames and detects pedistrians."""
