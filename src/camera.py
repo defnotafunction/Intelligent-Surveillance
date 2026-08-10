@@ -1,6 +1,7 @@
 import cv2
 from .controller import ControllerManager, get_any_controllers_connected
 from .facial_recognition import FaceAnalyzer
+from .alarm import AlarmManager
 import logging
 import random
 from os import path
@@ -8,7 +9,21 @@ import speech_recognition as sr
 import pyttsx3
 
 class Camera:
-    def __init__(self) -> None:
+    def __init__(self, curfew_start_hour: int, curfew_duration_in_hours: int) -> None:
+        """
+        The initalization of a Camera object.
+
+        Args:
+            curfew_start_hour: An integer that represents start of the curfew hour, must be a number between 0 and 23.
+            curfew_duration_in_hours: How long the curfew the curfew lasts in hour units.
+
+        """
+        # Initialization of AlarmManager
+        self._alarm_manager = AlarmManager(
+            curfew_start_hour=curfew_start_hour,
+            curfew_duration_in_hours=curfew_duration_in_hours
+            )
+
         # Initialize Pedestrian detection
         self._hog = cv2.HOGDescriptor()
         self._hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
@@ -16,7 +31,6 @@ class Camera:
         self._cap = cv2.VideoCapture(0)  # Will capture frames from camera
 
         # FACE RECOGNITION AND DETECTION
-        logging.debug(cv2.data.haarcascades)
         self._face_casacde = cv2.CascadeClassifier(path.join(cv2.data.haarcascades, "haarcascade_frontalface_default.xml"))
         self._face_analyzer = FaceAnalyzer()
 
@@ -26,6 +40,7 @@ class Camera:
             self._controller = None
 
         self._current_controller_input = None
+        self._person_is_visible = False
         self.face_remembering_enabled = False  # Determines whether program will begin remembering faces or not
         self._speech_recognizer = sr.Recognizer()  # SPEECH TO TEXT
         self._tts_engine = pyttsx3.init()  # TEXT TO SPEECH
@@ -54,7 +69,10 @@ class Camera:
             confidence_threshold: A float value within an exclusive range between 0 and 1. The threshold for the weights of the detector that determines whether a detected object is classified as a pedestrian or not.
         """
         boxes, weights = self._hog.detectMultiScale(frame, winStride=(8, 8), padding=(8, 8), scale=1.05)
-            
+
+        if len(boxes) > 0:
+            self._person_is_visible = True
+        
         for box, weight in zip(boxes, weights):
             if weight > confidence_threshold:
                 x, y, w, h = box
@@ -70,6 +88,9 @@ class Camera:
         """
         grayscaled_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         detected_faces = self._face_casacde.detectMultiScale(grayscaled_frame, scaleFactor=1.1, minNeighbors=5, minSize=(50, 50))
+
+        if len(detected_faces) > 0:
+            self._person_is_visible = True
 
         for (x, y, w, h) in detected_faces:
             colored_face = frame[y:y+h, x:x+w]
@@ -106,8 +127,6 @@ class Camera:
                     cv2.rectangle(frame, (x, y), (x+w, y+h), (128, 128, 128), 2)
                     self._face_analyzer.save_unknown_face(colored_face)
 
-            
-
     def run(self) -> None:
         """Captures live video frames and detects pedistrians."""
         frames_ran = 0
@@ -124,6 +143,9 @@ class Camera:
             self._handle_pedestrian_detection(frame, confidence_threshold=0.8)
 
             self._handle_face_detecting(frame, frames_ran=frames_ran)
+
+            if self._person_is_visible and self._alarm_manager.get_now_is_curfew():
+                self._alarm_manager.play_alarm()
 
             cv2.putText(
                 frame,
@@ -142,7 +164,9 @@ class Camera:
                 break
 
             frames_ran += 1
+            self._person_is_visible = False  # Resets attribute, if person is still visible it'll become True again and will be processed as true.
 
         self._controller.kill()
+        self._alarm_manager.kill()
         self._cap.release()
         cv2.destroyAllWindows()

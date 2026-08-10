@@ -18,3 +18,8 @@
 - **Work done**: Implement face recognition and storing names for each face, the controller is used to enable the ability to start remembering faces. Faces are stored in known faces once the person says the phrase 'My name is (their name)', then every instance of that face is removed from unknown faces. I also implemented text-to-speech so remembered faces will have their names called.
 - **Challenges**: Deepface's method "verify" initially identified every face as the one in the known_faces folder, it then identified every face as a brand new one as a result of my try-except block that returned None if an exception was raised, which exceptions were actually being raised on every call. Finally, Deepface's default model has shown to exhibit racial bias, so I used SFace and assigned a strict threshold to it which worked much better.
 - **Future steps**: Tracking and identifying unknown faces using density clustering, implementing a recording and alarm feature.
+
+## [8/10/2026]
+- **Work done**: Create alarm.py and the AlarmManager class, the program now plays an alarm when someone is spotted during user-defined curfew hours.
+- **Challenges**: ...
+- **Future steps**: ...

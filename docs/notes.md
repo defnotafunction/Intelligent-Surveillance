@@ -20,3 +20,11 @@
         - Error was being thrown, which I made return None using try-except.
         - Fixed it by assiging the enforce_detection argument to False and the detector_backend argument to "skip", it now matches faces successfully; however, interestingly and concerningly, it does confuse dark-skinned individuals to be the same person, I might change the model it uses.
         - I tried using different, more expensive face recognition models. ArcFace identified every one as me, and FaceNet512 identified nobody as me, not even me. Also, using those models will cost me speed and processing power, and since this project is intended to be ran on less powerful devices, I will use SFace, it has proved itself to be able to distinguish between faces despite them having similar skin tones.
+
+# [8/10/2026]
+- **Thoughts**: 
+    - Renamed the empty microphone.py file to alarm.py and created an AlarmManager class to handle curfew times, recording, and playing alarms in specific cases such as when someone is spotted during curfew.
+    - Grabbed a random sound pixabay to be used as the security alarm, so far it'll play when somebody is spotted during curfew.
+
+- **Problems and Fixes**:
+    - ...
