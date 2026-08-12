@@ -160,7 +160,13 @@ class Camera:
             ):
             self._alarm_manager.play_alarm()
             self._recorder.write(frame)
+            return  # Prevents controller input statement from messing with the segments of this statement.
         elif done_recording:
+            self._recorder.reset()
+
+        if self._current_controller_input == 'RECORD':
+            self._recorder.write(frame)
+        else:
             self._recorder.reset()
 
     def run(self) -> None:
@@ -181,7 +187,7 @@ class Camera:
             self._handle_face_detecting(frame, frames_ran=frames_ran)
 
             self._handle_recording_and_alarm(frame)
-
+             
             cv2.putText(
                 frame,
                 f'Remembering Faces: {self.face_remembering_enabled}',

@@ -33,6 +33,7 @@
 - **Thoughts**:
     - Implemented attributes and methods in Recorder that dictate when a video file can stop being written to.
     - I'm going to start adding features to identify tracked unknown faces using density clustering, the arrays from unknown_faces will be loaded and embedded, then the model will fit on it. The first method that uses DBSCAN will be get_unknown_face_count, it will simply return how many points a cluster of a face has.
+    - Controller can now be used to start recording.
 
 - **Problems and Fixes**:
     - VideoWriter creates a video file as soon as its initalized, leaving an empty file if I don't write any frames to it. I'll try fixing it by only initalizing the VideoWriter object when the Recorder's write method is called.

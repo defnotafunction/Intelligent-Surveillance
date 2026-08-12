@@ -28,6 +28,9 @@ class ControllerManager:
                 elif event.button == 2:
                     return 'COUNT'
 
+                elif event.button == 3:
+                    return 'RECORD'
+
     def kill(self) -> None:
         """Shuts down all pygame modules."""
         pygame.joystick.quit()
