@@ -47,6 +47,7 @@ class Camera:
         self._speech_recognizer = sr.Recognizer()  # SPEECH TO TEXT
         self._tts_engine = pyttsx3.init()  # TEXT TO SPEECH
         self._recorder = Recorder(self._cap)
+        self._controller_activated_record = False 
 
     def talk(self, text) -> None:
         """
@@ -71,7 +72,8 @@ class Camera:
 
             if self._current_controller_input == 'REMEMBER':
                 self.face_remembering_enabled = not self.face_remembering_enabled  # Toggles between True and False
-            
+            elif self._current_controller_input == 'RECORD':
+                self._controller_activated_record = not self._controller_activated_record
 
         self._controller = self._get_controller()
 
@@ -164,7 +166,7 @@ class Camera:
         elif done_recording:
             self._recorder.reset()
 
-        if self._current_controller_input == 'RECORD':
+        if self._controller_activated_record:
             self._recorder.write(frame)
         else:
             self._recorder.reset()
