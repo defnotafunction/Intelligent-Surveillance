@@ -11,7 +11,9 @@ Security Camera/
 |   |   `-- unknown_faces/
 |   |    
 |   |-- face_to_data/
-|   `-- models/
+|   |-- models/
+|   `-- videos/
+|
 |-- docs/
 |   |-- dev-log.md
 |   |-- notes.md
@@ -19,10 +21,12 @@ Security Camera/
 |-- logs/
 `-- src/
     |-- __init__.py
+    |-- alarm.py
     |-- camera.py
     |-- controller.py
     |-- execeptions.py
     |-- facial_recognition.py
     |-- main.py
-    `-- microphone.py
+    |-- microphone.py
+    `-- recorder.py
 ```

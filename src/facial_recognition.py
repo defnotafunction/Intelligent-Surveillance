@@ -1,8 +1,9 @@
 from deepface import DeepFace
-from numpy import ndarray
+import numpy as np
 from os import path, listdir, remove, makedirs
 from numpy import save, load
 from sklearn.cluster import DBSCAN
+from sklearn.manifold import TSNE
 import json
 import cv2
 import logging
@@ -12,12 +13,13 @@ BASE_DIR = path.dirname(SRC_DIR)
 
 class FaceAnalyzer:
     def __init__(self):
-        self.model = DBSCAN(
+        self.clustering_model = DBSCAN(
+            eps=0.1,
             min_samples=1,  # One face can be its own cluster
             n_jobs=-1  # Uses all processors
         )
         self.create_missing_folders_and_files()
-        
+        self.deepface_model_name = 'SFace'
         known_face_data_path = path.join(BASE_DIR, 'data', 'face_to_data', 'known_face_data.json')
 
         # IN CASE FILE IS EMPTY
@@ -51,7 +53,7 @@ class FaceAnalyzer:
                 with open(file, "w", encoding="utf-8") as file:
                     pass
         
-    def get_faces_match(self, img1: ndarray, img2: ndarray, threshold: float = 0.35) -> bool:
+    def get_faces_match(self, img1: np.ndarray, img2: np.ndarray, threshold: float = 0.35) -> bool:
         """
         Checks if the two images include the same face.
 
@@ -73,13 +75,13 @@ class FaceAnalyzer:
             rgb_img2,
             enforce_detection=False,
             detector_backend='skip',  # Skips detecting face because image is already an array of a cropped face
-            model_name='SFace'
+            model_name=self.deepface_model_name
             )['distance']
 
         return distance <= threshold
         
 
-    def save_unknown_face(self, unknown_face: ndarray) -> None:
+    def save_unknown_face(self, unknown_face: np.ndarray) -> None:
         """
         Saves an array of an unknown face into the folder containing unknown faces. 
         This method should only be used for unknown faces!
@@ -94,7 +96,7 @@ class FaceAnalyzer:
 
         save(file_path, unknown_face)
 
-    def store_face_into_known_faces(self, face: ndarray, name: str) -> None:
+    def store_face_into_known_faces(self, face: np.ndarray, name: str) -> None:
         """
         Saves an array of a face into the folder containing known faces and saves data of the person in the folder linking data to known faces.
 
@@ -116,7 +118,7 @@ class FaceAnalyzer:
             json.dump(self.data_of_known_faces, file, indent=4)
 
 
-    def remove_face_from_unknown_faces(self, face: ndarray) -> None:
+    def remove_face_from_unknown_faces(self, face: np.ndarray) -> None:
         """
         Removes a face from every image included in the folder containing unknown faces. 
         This method should only be used for unknown faces!
@@ -134,7 +136,7 @@ class FaceAnalyzer:
             if self.get_faces_match(face_array, face):  # Skip face detecting since face should be an array already.
                 remove(file_path)
 
-    def get_face_is_in_unknown_faces(self, face: ndarray) -> bool:
+    def get_face_is_in_unknown_faces(self, face: np.ndarray) -> bool:
         """
         Checks if a face matches with any in the folder containing unknown faces.
 
@@ -155,7 +157,7 @@ class FaceAnalyzer:
 
         return False
 
-    def get_face_is_in_known_faces(self, face: ndarray) -> bool:
+    def get_face_is_in_known_faces(self, face: np.ndarray) -> bool:
         """
         Checks if a face matches with any in the folder containing known faces.
 
@@ -176,7 +178,7 @@ class FaceAnalyzer:
 
         return False
 
-    def remember_face(self, face: ndarray, name_of_person: str) -> None:
+    def remember_face(self, face: np.ndarray, name_of_person: str) -> None:
         """
         Saves an array of a face into the folder containing known faces and saves data of the person in the folder linking data to known faces.
         Also removes every image that includes face from unknown faces.
@@ -190,7 +192,7 @@ class FaceAnalyzer:
             self.remove_face_from_unknown_faces(face)
             self.store_face_into_known_faces(face, name=name_of_person)
 
-    def get_name_of_known_face(self, face: ndarray) -> str:
+    def get_name_of_known_face(self, face: np.ndarray) -> str:
         """
         Gets the name of a known face.
         Must only be used with faces that are known!
@@ -213,15 +215,52 @@ class FaceAnalyzer:
 
         return self.data_of_known_faces[f'Face{face_number}']
 
-    def fit_clustering_model(self) -> None:
-        """Fits a DBSCAN model on the folder containing unknown faces."""
-
+    def get_cluster_predictions_of_unknown_faces(self) -> np.ndarray:
+        """Fits a DBSCAN model on the folder containing unknown faces and returns its predictions."""
         folder_path = path.join(BASE_DIR, 'data', 'face_arrays', 'unknown_faces')
 
-        face_arrays = []
+        embeddings = []
+
         for file_name in listdir(folder_path):
-            face_arrays.append(load(path.join(folder_path, file_name)))
+            face_array = load(path.join(folder_path, file_name))
+            objs = DeepFace.represent(
+                img_path=face_array,
+                model_name=self.deepface_model_name,
+                enforce_detection=False,
+                detector_backend='skip'
+            )
+            vector = objs[0]['embedding']
+            embeddings.append(vector)
+        
+        clusters = self.clustering_model.fit_predict(embeddings)
 
-        self.model.fit(face_arrays)
-            
+        return clusters
 
+    def get_unknown_face_count(self, face: np.ndarray) -> int:
+        """
+        Returns an approximation of how many times a certain face appears in unknown_faces based off the predictions of a clustering model.
+
+        Args:
+            face: An array that holds the image with a face.
+
+        Returns:
+            An integer that represents how many times a face appears in the folder unknown_faces.
+        """
+        face_idx = None
+        folder_path = path.join(BASE_DIR, 'data', 'face_arrays', 'unknown_faces')
+        for idx, file_name in enumerate(listdir(folder_path)):
+            unknown_face = load(path.join(folder_path, file_name))
+
+            if self.get_faces_match(unknown_face, face):
+                face_idx = idx
+
+        if face_idx is None:
+            return 0
+        
+        labels = self.get_cluster_predictions_of_unknown_faces()
+
+        # Labels should be a parallel list to the list of the files in unknown_faces
+        label_of_face = labels[face_idx]
+        count = np.count_nonzero(labels == label_of_face)
+
+        return count

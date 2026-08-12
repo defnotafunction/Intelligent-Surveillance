@@ -1,8 +1,8 @@
 from .camera import Camera
 
 camera = Camera(
-    curfew_start_hour=21,
-    curfew_duration_in_hours=10
+    curfew_start_hour=9,
+    curfew_duration_in_hours=1
     )
 
 if __name__ == '__main__':

@@ -19,12 +19,14 @@ class ControllerManager:
         """Listens for buttons clicks."""
         for event in pygame.event.get():
             if event.type == pygame.JOYBUTTONDOWN:
-                # TODO: Remember to replace indented code with actual methods and settings instead of print functions
                 if event.button == 0:
                     return 'QUIT'
 
                 elif event.button == 1:
                     return 'REMEMBER'
+
+                elif event.button == 2:
+                    return 'COUNT'
 
     def kill(self) -> None:
         """Shuts down all pygame modules."""

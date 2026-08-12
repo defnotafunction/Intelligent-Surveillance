@@ -1,0 +1,4 @@
+2026-08-11 23:41:52,557 - DEBUG - Calling CoUninitialize()
+2026-08-11 23:41:52,560 - DEBUG - CoUninitialize() done.
+2026-08-11 23:49:12,147 - DEBUG - Calling CoUninitialize()
+2026-08-11 23:49:12,147 - DEBUG - CoUninitialize() done.

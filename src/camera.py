@@ -48,6 +48,17 @@ class Camera:
         self._tts_engine = pyttsx3.init()  # TEXT TO SPEECH
         self._recorder = Recorder(self._cap)
 
+    def talk(self, text) -> None:
+        """
+        Runs all necessary logic for text to speech.
+        
+        Args:
+            text: The text for the engine to say.
+        """
+        self._tts_engine.say(text)
+        self._tts_engine.runAndWait()
+        self._tts_engine = pyttsx3.Engine()  # Engine can't run say more than once for some reason
+
     def _get_controller(self) -> tuple[ControllerManager | None]:
         """Returns a ControllerManager object if a controller is detected, otherwise it returns None. Used to adapt to disconnections and reconnections."""
         return ControllerManager() if get_any_controllers_connected() else None
@@ -60,6 +71,7 @@ class Camera:
 
             if self._current_controller_input == 'REMEMBER':
                 self.face_remembering_enabled = not self.face_remembering_enabled  # Toggles between True and False
+            
 
         self._controller = self._get_controller()
 
@@ -110,13 +122,15 @@ class Camera:
                         person_name = text.replace('my name is', '')
                         self._face_analyzer.remember_face(colored_face, person_name)
 
+            if self._current_controller_input == 'COUNT':
+                count = self._face_analyzer.get_unknown_face_count(colored_face)
+                self.talk(f"This face has been tracked in unknown faces {count} {'time' if count == 1 else 'times'}.")
+
             # Below includes computationally expensive methods that uses Deepface
             if frames_ran % 100 == 0:
                 if self._face_analyzer.get_face_is_in_known_faces(colored_face):
                     person_name = self._face_analyzer.get_name_of_known_face(colored_face)
-                    self._tts_engine.say(f'Hello {person_name}')
-                    self._tts_engine.runAndWait()
-                    self._tts_engine = pyttsx3.Engine()  # Engine can't run say more than once for some reason
+                    self.talk(f'Hello {person_name}')
 
                 elif self._face_analyzer.get_face_is_in_unknown_faces(colored_face): 
                     # Track unknown faces every once in a while
@@ -129,6 +143,25 @@ class Camera:
                     # If detected face isn't stored at all, automatically store it in unknown faces.
                     cv2.rectangle(frame, (x, y), (x+w, y+h), (128, 128, 128), 2)
                     self._face_analyzer.save_unknown_face(colored_face)
+
+    def _handle_recording_and_alarm(self, frame) -> None:
+        """
+        Handles all necessary logic related to the recording and alarm system.
+        
+        Args:
+            frame: A numpy array deriving from the VideoCapture's read method.
+        """
+        # Play alarm and write video if person is visible during curfew or recorder isn't done recording during curfew
+        now_is_curfew = self._alarm_manager.get_now_is_curfew()
+        done_recording = self._recorder.get_done_recording()
+        if (
+            (self._person_is_visible and now_is_curfew)
+            or (not done_recording and now_is_curfew)
+            ):
+            self._alarm_manager.play_alarm()
+            self._recorder.write(frame)
+        elif done_recording:
+            self._recorder.reset()
 
     def run(self) -> None:
         """Captures live video frames and detects pedistrians."""
@@ -147,11 +180,7 @@ class Camera:
 
             self._handle_face_detecting(frame, frames_ran=frames_ran)
 
-            if self._person_is_visible and self._alarm_manager.get_now_is_curfew():
-                self._alarm_manager.play_alarm()
-                self._recorder.write(frame)
-            else:
-                self._recorder.reset()
+            self._handle_recording_and_alarm(frame)
 
             cv2.putText(
                 frame,
