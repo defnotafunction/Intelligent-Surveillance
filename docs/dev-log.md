@@ -22,4 +22,6 @@
 ## [8/10/2026]
 - **Work done**: Create alarm.py, recorder.py, the Recorder and AlarmManager class, the program now plays an alarm and records a video when someone is spotted during user-defined curfew hours.
 - **Challenges**: ...
-- **Future steps**: ...
+- **Future steps**: Tracking and identifying unknown faces using density clustering
+
+## [8/11/2026]
