@@ -53,6 +53,7 @@ class Camera:
         self._person_is_visible = False
         self.face_remembering_enabled = False  # Determines whether program will begin remembering faces or not
         self._controller_activated_record = False 
+        self._past_controller_activated_record = False
         self._detected_sound_anamoly = False
         self._training_sound_analyzer = False
 
@@ -80,6 +81,7 @@ class Camera:
             if self._current_controller_input == 'REMEMBER':
                 self.face_remembering_enabled = not self.face_remembering_enabled  # Toggles between True and False
             elif self._current_controller_input == 'RECORD':
+                self._past_controller_activated_record = self._controller_activated_record
                 self._controller_activated_record = not self._controller_activated_record
 
             # SOUND ANALYZER METHODS
@@ -174,27 +176,27 @@ class Camera:
         if (
             (self._person_is_visible and now_is_curfew)
             or (not done_recording and now_is_curfew)
+            or self._detected_sound_anamoly
             ):
             self._alarm_manager.play_alarm()
             self._recorder.write(frame)
-            return  # Prevents controller input statement from messing with the segments of this statement.
         
         elif done_recording:
             self._recorder.reset()
 
-        if self._detected_sound_anamoly:
-            self._alarm_manager.play_alarm()
-            self._recorder.write(frame)
-
         if self._controller_activated_record:
             self._recorder.write(frame)
-        else:
+        elif self._past_controller_activated_record and not self._controller_activated_record:  # If the user currently stopped recording after they were just recording
             self._recorder.reset()
+            self._past_controller_activated_record = self._controller_activated_record
 
         # Every 10 frames, check sound anamolies since predictions take time
         try:
             if frames_ran % 10 == 0:
-                if self._sound_analyzer.detect_sound_anamoly() and not self._alarm_manager.get_busy():  # Prevents infinite loop where analyzer can detect alarm as anamoly
+                # Prevents infinite loop where analyzer can detect alarm as anamoly
+                if ((self._sound_analyzer.detect_sound_anamoly() and not self._alarm_manager.get_busy())
+                    # Keeps detected_sound_anamoly attribute as True if the Recorder object isn't done recording.
+                or (self._detected_sound_anamoly and not done_recording)):  
                     self._detected_sound_anamoly = True
                 else:
                     self._detected_sound_anamoly = False

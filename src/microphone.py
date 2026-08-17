@@ -33,8 +33,6 @@ class SoundAnalyzer:
  
     def save_model(self) -> None:
         """Uses joblib to save the model used for sound anamolies into the models folder."""
-
-        
         joblib.dump(self.model, self.MODEL_PATH)
 
     def reset_model(self) -> None:
@@ -62,7 +60,7 @@ class SoundAnalyzer:
 
         prediction = self.model.predict([audio_array])
 
-        return prediction == -1  # ONECLASSSVM RETURNS -1 IF INPUT IS OUTLIER
+        return prediction == -1  # ONECLASSSVM RETURNS -1 IF SAMPLE IS OUTLIER
         
     def train(self) -> None:
         """

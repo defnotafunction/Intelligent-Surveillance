@@ -44,5 +44,12 @@
     - Creating the SoundAnalyzer class, it will detect anamolies in sound using PyAudio and a OneClassSVM, the "nu" argument, which acts as the maximum allowed percentage of misclassifications, should be set to a low value since the model is intended to be trained on sounds that are frequent and normal. 
 
 - **Problems and Fixes**:
-    - An alarm is blared whenever a sound anamoly is detected, however, the microphone can pick up on the alarm and consider it an anamoly, resulting in an infinite loop.
-        - Fixed it by only assiging the detected_sound_anamoly of Camera class to True if the AlarmManager's get_busy method was False, in other words I used the pygame's mixer module to check if the alarm was still blaring so sound anamolies won't be detected when it plays.
+    - An alarm is blared whenever a sound anamoly is detected; however, the microphone can pick up on the alarm and consider it an anamoly, resulting in an infinite loop.
+        - Fixed it by only assigning the detected_sound_anamoly attribute of the Camera class to True if the AlarmManager's get_busy method returned False. In other words I used the pygame's mixer module to check if the alarm was still blaring so sound anamolies won't be considered detected when the alarm plays.
+
+# [8/17/2026]
+- **Thoughts**:
+    - ...
+
+- **Problems and Fixes**:
+    - The recorder object uses the reset method if the controller didn't activate recording, which means whenever an alarm blares, the video file will stop having frames added because it's going through that if block. To fix this, I added a boolean variable that captures the past input of the controller's recording attribute, I changed the if statement leading to the reset method to only call the reset method if the controller didn't activate recording and it's past input was recording. In other words, it only resets when the user just stopped recording, not when the controller recording attribute is False in general.

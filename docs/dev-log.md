@@ -31,5 +31,10 @@
 
 # [8/16/2026]
 - **Work done**: Create the SoundAnalyzer class and methods to detect anamolies in sound.
-- **Challenges**: Alarm blares when sound anamoly is detected, SoundAnalyzer can consider an alarm as an anamoly, creating an infinite loop.
+- **Challenges**: Alarm blares when sound anamoly is detected, SoundAnalyzer can consider an alarm as an anamoly, creating an infinite loop. Fixed by only considering a sound as a anamoly when alarm isn't playing.
 - **Future steps**: Implement LLM features and finish up the facial recognition part of the project.
+
+# [8/17/2026]
+- **Work done**: Fix recording after detecting anamolies in sound.
+- **Challenges**: ...
+- **Future steps**: ...
