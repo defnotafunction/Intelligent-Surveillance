@@ -39,4 +39,10 @@
     - VideoWriter creates a video file as soon as its initalized, leaving an empty file if I don't write any frames to it. I'll try fixing it by only initalizing the VideoWriter object when the Recorder's write method is called.
         - The problem was fixed, however, the face and pedestrian detection can randomly toggle on and off, leaving random, short clips in the video folder. To fix it, I'll give the Recorder class a limit on how quickly it can stop recording or reset.
 
-    
+# [8/16/2026]
+- **Thoughts**:
+    - Creating the SoundAnalyzer class, it will detect anamolies in sound using PyAudio and a OneClassSVM, the "nu" argument, which acts as the maximum allowed percentage of misclassifications, should be set to a low value since the model is intended to be trained on sounds that are frequent and normal. 
+
+- **Problems and Fixes**:
+    - An alarm is blared whenever a sound anamoly is detected, however, the microphone can pick up on the alarm and consider it an anamoly, resulting in an infinite loop.
+        - Fixed it by only assiging the detected_sound_anamoly of Camera class to True if the AlarmManager's get_busy method was False, in other words I used the pygame's mixer module to check if the alarm was still blaring so sound anamolies won't be detected when it plays.

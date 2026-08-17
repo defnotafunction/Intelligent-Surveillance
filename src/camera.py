@@ -2,13 +2,15 @@ import cv2
 from .controller import ControllerManager, get_any_controllers_connected
 from .facial_recognition import FaceAnalyzer
 from .alarm import AlarmManager
-from.recorder import Recorder
+from .recorder import Recorder
+from .microphone import SoundAnalyzer
 import logging
 import random
 from os import path, makedirs
 import speech_recognition as sr
 import pyttsx3
-from datetime import datetime
+from sklearn.exceptions import NotFittedError
+
 
 class Camera:
     def __init__(self, curfew_start_hour: int, curfew_duration_in_hours: int) -> None:
@@ -25,6 +27,7 @@ class Camera:
             curfew_start_hour=curfew_start_hour,
             curfew_duration_in_hours=curfew_duration_in_hours
             )
+        self._sound_analyzer = SoundAnalyzer()
 
         # Initialize Pedestrian detection
         self._hog = cv2.HOGDescriptor()
@@ -42,12 +45,16 @@ class Camera:
             self._controller = None
 
         self._current_controller_input = None
-        self._person_is_visible = False
-        self.face_remembering_enabled = False  # Determines whether program will begin remembering faces or not
         self._speech_recognizer = sr.Recognizer()  # SPEECH TO TEXT
         self._tts_engine = pyttsx3.init()  # TEXT TO SPEECH
         self._recorder = Recorder(self._cap)
+
+        # BOOLEAN ATTRIBUTES
+        self._person_is_visible = False
+        self.face_remembering_enabled = False  # Determines whether program will begin remembering faces or not
         self._controller_activated_record = False 
+        self._detected_sound_anamoly = False
+        self._training_sound_analyzer = False
 
     def talk(self, text) -> None:
         """
@@ -74,6 +81,13 @@ class Camera:
                 self.face_remembering_enabled = not self.face_remembering_enabled  # Toggles between True and False
             elif self._current_controller_input == 'RECORD':
                 self._controller_activated_record = not self._controller_activated_record
+
+            # SOUND ANALYZER METHODS
+            elif self._current_controller_input == 'SOUND TRAIN':
+                self._training_sound_analyzer = not self._training_sound_analyzer
+            elif self._current_controller_input == 'SOUND RESET':
+                self._sound_analyzer.reset_model()
+
 
         self._controller = self._get_controller()
 
@@ -146,14 +160,15 @@ class Camera:
                     cv2.rectangle(frame, (x, y), (x+w, y+h), (128, 128, 128), 2)
                     self._face_analyzer.save_unknown_face(colored_face)
 
-    def _handle_recording_and_alarm(self, frame) -> None:
+    def _handle_recording_and_alarm(self, frame, frames_ran: int) -> None:
         """
         Handles all necessary logic related to the recording and alarm system.
         
         Args:
             frame: A numpy array deriving from the VideoCapture's read method.
+            frames_ran: An integer that holds how many frames have been captured since running.
         """
-        # Play alarm and write video if person is visible during curfew or recorder isn't done recording during curfew
+        # Play alarm and write video if person is visible during curfew or sound anamoly was detected
         now_is_curfew = self._alarm_manager.get_now_is_curfew()
         done_recording = self._recorder.get_done_recording()
         if (
@@ -163,13 +178,36 @@ class Camera:
             self._alarm_manager.play_alarm()
             self._recorder.write(frame)
             return  # Prevents controller input statement from messing with the segments of this statement.
+        
         elif done_recording:
             self._recorder.reset()
+
+        if self._detected_sound_anamoly:
+            self._alarm_manager.play_alarm()
+            self._recorder.write(frame)
 
         if self._controller_activated_record:
             self._recorder.write(frame)
         else:
             self._recorder.reset()
+
+        # Every 10 frames, check sound anamolies since predictions take time
+        try:
+            if frames_ran % 10 == 0:
+                if self._sound_analyzer.detect_sound_anamoly() and not self._alarm_manager.get_busy():  # Prevents infinite loop where analyzer can detect alarm as anamoly
+                    self._detected_sound_anamoly = True
+                else:
+                    self._detected_sound_anamoly = False
+        except NotFittedError:
+            pass
+
+    def _handle_sound_analysis(self) -> None:
+        """Execute certain methods of the SoundAnalyzer class"""
+        if self._training_sound_analyzer:
+            self._sound_analyzer.listen_for_training()
+
+        if self._sound_analyzer.sound_samples and not self._training_sound_analyzer:  # If samples were recorded and training was turned off
+            self._sound_analyzer.train()
 
     def run(self) -> None:
         """Captures live video frames and detects pedistrians."""
@@ -188,7 +226,9 @@ class Camera:
 
             self._handle_face_detecting(frame, frames_ran=frames_ran)
 
-            self._handle_recording_and_alarm(frame)
+            self._handle_recording_and_alarm(frame, frames_ran=frames_ran)
+
+            self._handle_sound_analysis()
              
             cv2.putText(
                 frame,

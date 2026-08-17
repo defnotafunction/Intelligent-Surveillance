@@ -28,3 +28,8 @@
 - **Work done**: Implemented attributes and methods in Recorder that dictate when a video file can stop being written to. It ensures that all video files are about the same length and that a new video file isn't created every time the face and pedistrian detectors randomly toggle on and off. Add a method that returns the frequency of a face appearing in unknown faces using DBSCAN clustering.
 - **Challenges**: ...
 - **Future steps**: Activate recording when decibels are unusually high, this will lead into environmental adaptation. Continue working on clustering unknown faces.
+
+# [8/16/2026]
+- **Work done**: Create the SoundAnalyzer class and methods to detect anamolies in sound.
+- **Challenges**: Alarm blares when sound anamoly is detected, SoundAnalyzer can consider an alarm as an anamoly, creating an infinite loop.
+- **Future steps**: Implement LLM features and finish up the facial recognition part of the project.

@@ -31,6 +31,12 @@ class ControllerManager:
                 elif event.button == 3:
                     return 'RECORD'
 
+                elif event.button == 4:
+                    return 'SOUND TRAIN'
+
+                elif event.button == 5:
+                    return 'SOUND RESET'
+
     def kill(self) -> None:
         """Shuts down all pygame modules."""
         pygame.joystick.quit()

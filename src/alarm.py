@@ -37,11 +37,15 @@ class AlarmManager:
         """Returns true if the current time is during curfew."""
         return self.start_of_curfew_datetime <= datetime.now() < self.end_of_curfew_datetime
 
+    def get_busy(self) -> bool:
+        """Returns a boolean value that indicates if the pygame's music stream is currently playing."""
+        return pygame.mixer.music.get_busy()
+
     def play_alarm(self) -> None:
         """Plays the security alarm file stored in assets/audios/."""
         alarm_path = path.join(BASE_DIR, 'assets', 'audios', 'security-alarm.mp3')
         
-        if not pygame.mixer.music.get_busy():
+        if not self.get_busy():
             pygame.mixer.music.load(alarm_path)
             pygame.mixer.music.play()
 
