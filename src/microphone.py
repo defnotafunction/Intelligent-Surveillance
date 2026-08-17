@@ -12,6 +12,7 @@ class SoundAnalyzer:
     CHUNK = 1024
     RATE = 44100
     CHANNELS=1
+    MODEL_PATH = path.join(BASE_DIR, 'data', 'models', 'oneclasssvm.joblib')
 
     def __init__(self) -> None:
         self.audio = pyaudio.PyAudio()
@@ -22,14 +23,19 @@ class SoundAnalyzer:
             input=True,
             frames_per_buffer=self.CHUNK
         )
-        self.model = SGDOneClassSVM(nu=0.01)  # Intended to be trained on normal and frequent sounds, used for sound anamolies
+
+        if path.exists(self.MODEL_PATH):
+            self.model = joblib.load(self.MODEL_PATH)
+        else:
+            self.model = SGDOneClassSVM(nu=0.01)  # Intended to be trained on normal and frequent sounds, used for sound anamolies
+
         self.sound_samples = []
  
     def save_model(self) -> None:
         """Uses joblib to save the model used for sound anamolies into the models folder."""
 
-        model_path = path.join(BASE_DIR, 'data', 'models', 'oneclasssvm.joblib')
-        joblib.dump(self.model, model_path)
+        
+        joblib.dump(self.model, self.MODEL_PATH)
 
     def reset_model(self) -> None:
         """Reassigns the model attribute and saves it."""
@@ -65,6 +71,7 @@ class SoundAnalyzer:
         """
         self.model.partial_fit(self.sound_samples)
         self.sound_samples = []
+        self.save_model()
 
     def kill(self) -> None:
         """Terminates pyaudio."""
