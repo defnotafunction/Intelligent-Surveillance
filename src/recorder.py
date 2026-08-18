@@ -22,20 +22,24 @@ class Recorder:
 
         self.fourcc = cv2.VideoWriter_fourcc(*"mp4v")
         self.video_writer = None
-        self.reset_cooldown = 30
-        self.current_time = -self.reset_cooldown  # Ensures that the get_done_recording method always returns True before write gets called
+        self.minimum_length = 30  # 30 Seconds
+        self.current_time = time.time()
+        self.called_write = False
 
-    def write(self, frame) -> None:
+    def write(self, frame, prefix: str) -> None:
         """
         Calls the cv2 VideoWriter write method
 
         Args:
             frame: A frame from the cv2 VideoCapture read method.
+            prefix: A string that'll be used at the start at the filename of the video file created on the first call of this method after using the reset method.
         """
-        if self.video_writer is None:
+        if self.video_writer is None:  # First write call or after the writer has been resetted.
             self.current_time = time.time()
+            self.called_write = True
+
             str_datetime = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
-            filename = f'sc_footage_{str_datetime}.mp4'  # To make every filename unique
+            filename = f'{prefix}_sc_footage_{str_datetime}.mp4'  # To make every filename unique
             
             self.video_writer = cv2.VideoWriter(
                 path.join(BASE_DIR, 'data', 'videos', f"{filename}"),
@@ -49,9 +53,9 @@ class Recorder:
     def get_done_recording(self) -> bool:
         """
         Returns a boolean that indicates whether the video_writer attribute can be assigned to None based on if the amount of seconds since creating a video file is greater than the reset_cooldown attribute.
-        This ensures that the current video file will be as long as the reset_cooldown attribute.
+        This ensures that the current video file will be at least the number of seconds the minimum_length attribute is assigned.
         """
-        return time.time() - self.current_time >= self.reset_cooldown
+        return time.time() - self.current_time >= self.minimum_length
 
     def reset(self) -> None:
         """
@@ -59,3 +63,4 @@ class Recorder:
         Only use this method when the current video file is done being created!
         """
         self.video_writer = None
+        self.called_write = False

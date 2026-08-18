@@ -35,6 +35,6 @@
 - **Future steps**: Implement LLM features and finish up the facial recognition part of the project.
 
 # [8/17/2026]
-- **Work done**: Fix recording after detecting anamolies in sound.
-- **Challenges**: ...
-- **Future steps**: ...
+- **Work done**: Fix recording after detecting anamolies in sound. Created sender.py and the GmailSender class, so after recording, the video is sent via email.
+- **Challenges**: Problems kept popping up with the recording mechanisms.
+- **Future steps**: Implement LLM features, finish up the facial recognition part of the project, especially the density clustering part.

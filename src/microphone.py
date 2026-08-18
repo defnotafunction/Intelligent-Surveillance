@@ -58,7 +58,7 @@ class SoundAnalyzer:
         raw_bytes = self.stream.read(self.CHUNK, exception_on_overflow=False)
         audio_array = np.frombuffer(raw_bytes, dtype=np.float32)
 
-        prediction = self.model.predict([audio_array])
+        prediction = self.model.predict([audio_array])[0]
 
         return prediction == -1  # ONECLASSSVM RETURNS -1 IF SAMPLE IS OUTLIER
         

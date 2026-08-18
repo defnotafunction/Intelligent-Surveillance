@@ -4,13 +4,16 @@ from .facial_recognition import FaceAnalyzer
 from .alarm import AlarmManager
 from .recorder import Recorder
 from .microphone import SoundAnalyzer
+from .sender import GmailSender
 import logging
 import random
-from os import path, makedirs
+from os import path, listdir
 import speech_recognition as sr
 import pyttsx3
 from sklearn.exceptions import NotFittedError
 
+SRC_DIR = path.dirname(path.abspath(__file__)) 
+BASE_DIR = path.dirname(SRC_DIR)
 
 class Camera:
     def __init__(self, curfew_start_hour: int, curfew_duration_in_hours: int) -> None:
@@ -48,6 +51,7 @@ class Camera:
         self._speech_recognizer = sr.Recognizer()  # SPEECH TO TEXT
         self._tts_engine = pyttsx3.init()  # TEXT TO SPEECH
         self._recorder = Recorder(self._cap)
+        self._sender = GmailSender()
 
         # BOOLEAN ATTRIBUTES
         self._person_is_visible = False
@@ -170,26 +174,40 @@ class Camera:
             frame: A numpy array deriving from the VideoCapture's read method.
             frames_ran: An integer that holds how many frames have been captured since running.
         """
+        last_video = listdir(path.join(BASE_DIR, 'data', 'videos'))[-1]
+        last_video_path = path.join(BASE_DIR, 'data', 'videos', last_video)
         # Play alarm and write video if person is visible during curfew or sound anamoly was detected
         now_is_curfew = self._alarm_manager.get_now_is_curfew()
         done_recording = self._recorder.get_done_recording()
         if (
             (self._person_is_visible and now_is_curfew)
-            or (not done_recording and now_is_curfew)
+            or (not done_recording and now_is_curfew and self._recorder.called_write)  # done_recording is False for the first "Recorder.reset_cooldown" seconds even if write hasn't been called
             or self._detected_sound_anamoly
             ):
             self._alarm_manager.play_alarm()
-            self._recorder.write(frame)
-        
+            prefix = 'sound_anamoly' if self._detected_sound_anamoly else 'human_spotted_curfew'
+            self._recorder.write(frame, prefix=prefix)
+
         elif done_recording:
             self._recorder.reset()
+            self._sender.send(
+                email_subject='ALARM BLARED!',
+                message='The following attachment is a recording of when the alarm blared (Person during curfew or sound anamoly):',
+                file_paths=[last_video_path]
+            )
+            
 
         if self._controller_activated_record:
-            self._recorder.write(frame)
+            self._recorder.write(frame, prefix='controller')
         elif self._past_controller_activated_record and not self._controller_activated_record:  # If the user currently stopped recording after they were just recording
             self._recorder.reset()
             self._past_controller_activated_record = self._controller_activated_record
-
+            self._sender.send(
+                email_subject='Manual Recording',
+                message='The following attachment is a recording:',
+                file_paths=[last_video_path]
+                                    )
+                                    
         # Every 10 frames, check sound anamolies since predictions take time
         try:
             if frames_ran % 10 == 0:
