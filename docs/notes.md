@@ -54,3 +54,10 @@
 - **Problems and Fixes**:
     - The recorder object uses the reset method if the controller didn't activate recording, which means whenever an alarm blares, the video file will stop having frames added because it's going through that if block. To fix this, I added a boolean variable that captures the past input of the controller's recording attribute, I changed the if statement leading to the reset method to only execute its nested segment if the controller didn't activate recording and its past input was recording. In other words, it only resets when the user just stopped recording, not when the controller recording attribute is False in general.
     - get_done_recording method from the Recorder class returns True before the first write call; however, doing this makes sending emails messy. I added a called_write attribute with the boolean False to the Recorder class that is assigned True after the write method is called and False when the Recorder's reset method is called. This allows the program to have more context about the get_done_recording method since now it returns False during the period of time before the Recorder's cooldown ends even if a video file hasn't been written at all.
+
+# [8/18/2026]
+- **Thoughts**:
+    - Scratch of plans. I'm not adding the LLM feature because I want to keep most of the project light, local, and deterministic. I'll simply use the speech recognition library to listen for pre-defined commands. Boring, yes. Complicated, no.
+
+- **Problems and Fixes**:
+    - Tens of emails are sent, the problem was that Recorder's current time attribute, the one that dictates whether the get_done_recording method is true, is only evaluated and resetted in the write method. This means that between a video being done recording, and a Recorder object's write method being called, an email was being sent every frame.

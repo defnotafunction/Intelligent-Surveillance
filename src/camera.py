@@ -93,6 +93,20 @@ class Camera:
                 self._training_sound_analyzer = not self._training_sound_analyzer
             elif self._current_controller_input == 'SOUND RESET':
                 self._sound_analyzer.reset_model()
+            elif self._current_controller_input == 'GRAPH UNKNOWN FACES':
+                # T-SNE uses perplexity of 5, if # of unknown faces is lower it raises exception.
+                #try:
+                graph_path = self._face_analyzer.create_graph_of_unknown_faces()
+                self._sender.send(
+                    'Unknown Faces Graph',
+                    message="Here's a graph of clusters of unknown faces!",
+                    file_paths=[graph_path]
+                    ) 
+                #except Exception as e:
+                #    self.talk("There aren't enough unknown faces stored in order to do that.")
+                #    print(e)
+
+                self._current_controller_input = None
 
 
         self._controller = self._get_controller()

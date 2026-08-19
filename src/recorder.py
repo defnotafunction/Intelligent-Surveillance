@@ -35,7 +35,6 @@ class Recorder:
             prefix: A string that'll be used at the start at the filename of the video file created on the first call of this method after using the reset method.
         """
         if self.video_writer is None:  # First write call or after the writer has been resetted.
-            self.current_time = time.time()
             self.called_write = True
 
             str_datetime = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
@@ -55,12 +54,13 @@ class Recorder:
         Returns a boolean that indicates whether the video_writer attribute can be assigned to None based on if the amount of seconds since creating a video file is greater than the reset_cooldown attribute.
         This ensures that the current video file will be at least the number of seconds the minimum_length attribute is assigned.
         """
-        return time.time() - self.current_time >= self.minimum_length
+        return (time.time() - self.current_time >= self.minimum_length) and self.called_write
 
     def reset(self) -> None:
         """
-        Reassigns the video_writer attribute to None.
+        Reassigns the video_writer and called_write attributes to None and resets current_time attribute.
         Only use this method when the current video file is done being created!
         """
         self.video_writer = None
         self.called_write = False
+        self.current_time = time.time()

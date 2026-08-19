@@ -30,7 +30,7 @@
 - **Future steps**: Activate recording when decibels are unusually high, this will lead into environmental adaptation. Continue working on clustering unknown faces.
 
 # [8/16/2026]
-- **Work done**: Create the SoundAnalyzer class and methods to detect anamolies in sound.
+- **Work done**: Create the SoundAnalyzer class and methods to detect anamolies in sound using OneClassSVM.
 - **Challenges**: Alarm blares when sound anamoly is detected, SoundAnalyzer can consider an alarm as an anamoly, creating an infinite loop. Fixed by only considering a sound as a anamoly when alarm isn't playing.
 - **Future steps**: Implement LLM features and finish up the facial recognition part of the project.
 
@@ -38,3 +38,8 @@
 - **Work done**: Fix recording after detecting anamolies in sound. Created sender.py and the GmailSender class, so after recording, the video is sent via email.
 - **Challenges**: Problems kept popping up with the recording mechanisms.
 - **Future steps**: Implement LLM features, finish up the facial recognition part of the project, especially the density clustering part.
+
+# [8/18/2026]
+- **Work done**: Create a method for creating graphs of the result of density clustering unknown faces. The program also sends them after detecting a specific controller input.
+- **Challenges**: Fixing a problem with the email sending feature, emails were sent every frame after a video was finished recording.
+- **Future steps**: Make program listen to pre-defined phrases instead of implementing LLM phrases.
