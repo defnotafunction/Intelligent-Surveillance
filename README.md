@@ -20,7 +20,7 @@
 # Core Features
 - Live Camera Surveillance using `opencv-python` (`OpenCV`).
 - Human detection, facial recognition, and face memory using `DeepFace` and `OpenCV`.
-- Face tracking powered by `scikit-learn`'s `DBSCAN` and `TSNE`.
+- Unknown face tracking powered by `scikit-learn`'s `DBSCAN` and `TSNE`.
 - Automatic Recording + Alarm.
 - Sound anomaly detection powered by `scikit-learn`'s `SGDOneClassSVM`.
 - Controller input handling using `pygame`.
@@ -37,7 +37,7 @@
         3. Remembers a face and their name, and removes its instances in a folder of unknown faces.
     
     - Tracking:
-        - Uses density clustering (`DBSCAN`) to identify and group unknown faces, and dimensionality reduction (`TSNE`/t-SNE) for graphing them.
+        - Uses density clustering (`StandardScaler` -> `PCA` -> `DBSCAN`) to identify and group unknown faces, and dimensionality reduction (`TSNE`/t-SNE) for graphing them.
 
 - Recording + Alarm:
     - Activated once a person is detected during defined curfew hours or a sound anomaly is spotted.

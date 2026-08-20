@@ -3,12 +3,11 @@ from .controller import ControllerManager, get_any_controllers_connected
 from .facial_recognition import FaceAnalyzer
 from .alarm import AlarmManager
 from .recorder import Recorder
-from .microphone import SoundAnalyzer
+from .microphone import SoundAnalyzer, SpeechRecognition
 from .sender import GmailSender
 import logging
 import random
 from os import path, listdir
-import speech_recognition as sr
 import pyttsx3
 from sklearn.exceptions import NotFittedError
 
@@ -48,7 +47,7 @@ class Camera:
             self._controller = None
 
         self._current_controller_input = None
-        self._speech_recognizer = sr.Recognizer()  # SPEECH TO TEXT
+        self._speech_recognizer = SpeechRecognition()  # SPEECH TO TEXT
         self._tts_engine = pyttsx3.init()  # TEXT TO SPEECH
         self._recorder = Recorder(self._cap)
         self._sender = GmailSender()
@@ -95,16 +94,15 @@ class Camera:
                 self._sound_analyzer.reset_model()
             elif self._current_controller_input == 'GRAPH UNKNOWN FACES':
                 # T-SNE uses perplexity of 5, if # of unknown faces is lower it raises exception.
-                #try:
-                graph_path = self._face_analyzer.create_graph_of_unknown_faces()
-                self._sender.send(
-                    'Unknown Faces Graph',
-                    message="Here's a graph of clusters of unknown faces!",
-                    file_paths=[graph_path]
-                    ) 
-                #except Exception as e:
-                #    self.talk("There aren't enough unknown faces stored in order to do that.")
-                #    print(e)
+                try:
+                    graph_path = self._face_analyzer.create_graph_of_unknown_faces()
+                    self._sender.send(
+                        'Unknown Faces Graph',
+                        message="Here's a graph of clusters of unknown faces!",
+                        file_paths=[graph_path]
+                ) 
+                except ValueError:
+                    self.talk("There aren't enough unknown faces stored in order to do that.")
 
                 self._current_controller_input = None
 
@@ -148,11 +146,7 @@ class Camera:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
             if self.face_remembering_enabled:
-                with sr.Microphone() as source:
-                    self._speech_recognizer.adjust_for_ambient_noise(source, duration=0.2)
-                    audio = self._speech_recognizer.listen(source)
-                    text = self._speech_recognizer.recognize_vosk(audio)
-                    text = text.lower()
+                    text = self._speech_recognizer.listen()
 
                     if 'my name is' in text:
                         person_name = text.replace('my name is', '')

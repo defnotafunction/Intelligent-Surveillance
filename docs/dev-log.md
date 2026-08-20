@@ -42,4 +42,9 @@
 # [8/18/2026]
 - **Work done**: Create a method for creating graphs of the result of density clustering unknown faces. The program also sends them after detecting a specific controller input.
 - **Challenges**: Fixing a problem with the email sending feature, emails were sent every frame after a video was finished recording.
-- **Future steps**: Make program listen to pre-defined phrases instead of implementing LLM phrases.
+- **Future steps**: Make program listen to pre-defined phrases instead of implementing LLM features.
+
+# [8/19/2026]
+- **Work done**: Implement PCA for density clustering unknown faces to reduce noise, increase epsilon for DBSCAN. Create SpeechRecognition class in microphone.py to prepare for adding pre-defined commands and communication with an LLM.
+- **Challenges**: Selecting the right amount of principle components and epsilon size.
+- **Future steps**: Make program have an open ear for pre-defined commands or prompts for an LLM, may use multithreading; if it's too computationally expensive, I'll map the feature to an input on the controller instead.

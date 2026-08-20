@@ -61,3 +61,11 @@
 
 - **Problems and Fixes**:
     - Tens of emails are sent, the problem was that Recorder's current time attribute, the one that dictates whether the get_done_recording method is true, is only evaluated and resetted in the write method. This means that between a video being done recording, and a Recorder object's write method being called, an email was being sent every frame.
+
+# [8/19/2026]
+- **Thoughts**: 
+    - Just learned that os.listdir() returns files in an arbitrary order, I have to change all methods that uses that listdir but rely on consistent order.
+    - Change of plans again, we're implementing LLM features, but we're also keeping the recognition to pre-defined commands as a fallback feature (e.g User has no internet connection or LLM API)
+
+- **Problems and Fixes**:
+    - DBSCAN returned one cluster for each face, I have to increase the epilson argument. I will also use PCA to reduce noise before passing it into DBSCAN for interpretability.

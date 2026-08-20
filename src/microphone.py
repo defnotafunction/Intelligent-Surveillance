@@ -3,6 +3,7 @@ import pyaudio
 from sklearn.linear_model import SGDOneClassSVM 
 import joblib
 from os import path
+import speech_recognition as sr
 
 SRC_DIR = path.dirname(path.abspath(__file__)) 
 BASE_DIR = path.dirname(SRC_DIR)
@@ -76,3 +77,11 @@ class SoundAnalyzer:
         self.stream.stop_stream()
         self.stream.close()
         self.audio.terminate()
+
+class SpeechRecognition:
+    def listen(self):
+        with sr.Microphone() as source:
+            self._speech_recognizer.adjust_for_ambient_noise(source, duration=0.2)
+            audio = self._speech_recognizer.listen(source)
+            text = self._speech_recognizer.recognize_vosk(audio)
+            text = text.lower()

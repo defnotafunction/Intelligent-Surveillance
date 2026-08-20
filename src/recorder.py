@@ -54,6 +54,9 @@ class Recorder:
         Returns a boolean that indicates whether the video_writer attribute can be assigned to None based on if the amount of seconds since creating a video file is greater than the reset_cooldown attribute.
         This ensures that the current video file will be at least the number of seconds the minimum_length attribute is assigned.
         """
+        if not self.called_write:
+            self.current_time = time.time()
+
         return (time.time() - self.current_time >= self.minimum_length) and self.called_write
 
     def reset(self) -> None:

@@ -4,6 +4,7 @@ from os import path, listdir, remove, makedirs
 from sklearn.cluster import DBSCAN
 from sklearn.manifold import TSNE
 from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 import json
 import cv2
 import matplotlib.pyplot as plt
@@ -17,7 +18,7 @@ BASE_DIR = path.dirname(SRC_DIR)
 class FaceAnalyzer:
     def __init__(self):
         self.clustering_model = DBSCAN(
-            eps=0.1,
+            eps=10,
             min_samples=1,  # One face can be its own cluster
             n_jobs=-1  # Uses all processors
         )
@@ -231,7 +232,7 @@ class FaceAnalyzer:
         """
         embeddings = []
         
-        for file_name in listdir(folder_path):
+        for file_name in sorted(listdir(folder_path)):
             face_array = np.load(path.join(folder_path, file_name))
             objs = DeepFace.represent(
                 img_path=face_array,
@@ -246,13 +247,14 @@ class FaceAnalyzer:
         return embeddings
 
     def get_cluster_predictions_of_unknown_faces(self) -> np.ndarray:
-        """Fits a DBSCAN model on the folder containing unknown faces and returns its predictions."""
+        """Uses Standardization and PCA to fit a DBSCAN model on the folder containing unknown faces and returns its predictions."""
         folder_path = path.join(BASE_DIR, 'data', 'face_arrays', 'unknown_faces')
-
+        pca = PCA(n_components=7)
         embeddings = self.get_embeddings_of_files_in_directory(folder_path)
-
+        
         embeddings_scaled = StandardScaler().fit_transform(X=embeddings)
-        clusters = self.clustering_model.fit_predict(embeddings_scaled)
+        projected_embeddings = pca.fit_transform(embeddings_scaled)
+        clusters = self.clustering_model.fit_predict(projected_embeddings)
 
         return clusters
 
@@ -268,7 +270,7 @@ class FaceAnalyzer:
         """
         face_idx = None
         folder_path = path.join(BASE_DIR, 'data', 'face_arrays', 'unknown_faces')
-        for idx, file_name in enumerate(listdir(folder_path)):
+        for idx, file_name in enumerate(sorted(listdir(folder_path))):
             unknown_face = np.load(path.join(folder_path, file_name))
 
             if self.get_faces_match(unknown_face, face):
@@ -293,7 +295,7 @@ class FaceAnalyzer:
             A file path leading to a png of the newly created graph.
         """
         unknown_face_directory = path.join(BASE_DIR, 'data', 'face_arrays', 'unknown_faces')
-        unknown_faces_files = [path.join(unknown_face_directory, filename) for filename in listdir(unknown_face_directory)]
+        unknown_faces_files = [path.join(unknown_face_directory, filename) for filename in sorted(listdir(unknown_face_directory))]
         embeddings = self.get_embeddings_of_files_in_directory(unknown_face_directory)
         clusters = self.get_cluster_predictions_of_unknown_faces()
 
@@ -317,7 +319,8 @@ class FaceAnalyzer:
         plt.legend(*scatter.legend_elements(), title="Face Legend")
 
         unique_clusters = np.unique(clusters)
-
+        print(unique_clusters)
+        
         for cluster_id in unique_clusters:
             points_in_cluster = embeddings_2d[clusters == cluster_id]
             center_x = np.mean(points_in_cluster[:, 0])
