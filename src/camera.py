@@ -10,6 +10,7 @@ import random
 from os import path, listdir
 import pyttsx3
 from sklearn.exceptions import NotFittedError
+from concurrent.futures import ThreadPoolExecutor
 
 SRC_DIR = path.dirname(path.abspath(__file__)) 
 BASE_DIR = path.dirname(SRC_DIR)
@@ -24,6 +25,7 @@ class Camera:
             curfew_duration_in_hours: How long the curfew the curfew lasts in hour units.
 
         """
+        self._wake_word = 'Paper'
         # Initialization of AlarmManager
         self._alarm_manager = AlarmManager(
             curfew_start_hour=curfew_start_hour,
@@ -47,7 +49,11 @@ class Camera:
             self._controller = None
 
         self._current_controller_input = None
+
         self._speech_recognizer = SpeechRecognition()  # SPEECH TO TEXT
+        self._listening_pool = ThreadPoolExecutor(max_workers=1)
+        self._current_words_spoken = {'words': None}
+
         self._tts_engine = pyttsx3.init()  # TEXT TO SPEECH
         self._recorder = Recorder(self._cap)
         self._sender = GmailSender()
@@ -146,11 +152,11 @@ class Camera:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
             if self.face_remembering_enabled:
-                    text = self._speech_recognizer.listen()
+                    text = self._speech_recognizer.listen()  
 
                     if 'my name is' in text:
                         person_name = text.replace('my name is', '')
-                        self._face_analyzer.remember_face(colored_face, person_name)
+                        self._face_analyzer.remember_face(colored_face, person_name)   
 
             if self._current_controller_input == 'COUNT':
                 count = self._face_analyzer.get_unknown_face_count(colored_face)
@@ -237,6 +243,36 @@ class Camera:
         if self._sound_analyzer.sound_samples and not self._training_sound_analyzer:  # If samples were recorded and training was turned off
             self._sound_analyzer.train()
 
+    def _handle_recognizing_commands(self) -> None:
+        """Execute methods of the SpeechRecognition class relating to mapping voice inputs to functions"""
+
+        if not hasattr(self, "_active_listening_future") or self._active_listening_future is None:
+            def on_listening_done(future):
+                result = future.result()
+                
+                self._current_words_spoken.update({'words': result})
+                self._active_listening_future = None
+
+            # Listens concurrently
+            self._active_listening_future = self._listening_pool.submit(self._speech_recognizer.listen)
+            self._active_listening_future.add_done_callback(lambda f: on_listening_done(f))
+
+        if self._current_words_spoken['words'] is not None:
+            spoken_text = self._current_words_spoken['words']
+            self._current_words_spoken['words'] = None
+            clean_words = [word.lower().strip(",.?!") for word in spoken_text.split()]  # Remove punctuation
+            
+            if self._wake_word.lower() in clean_words:
+                response = self._speech_recognizer.get_llm_response(spoken_text)
+                self.talk(response)
+
+            
+        
+        
+
+        
+        
+
     def run(self) -> None:
         """Captures live video frames and detects pedistrians."""
         frames_ran = 0
@@ -257,7 +293,9 @@ class Camera:
             self._handle_recording_and_alarm(frame, frames_ran=frames_ran)
 
             self._handle_sound_analysis()
-             
+
+            self._handle_recognizing_commands()
+            
             cv2.putText(
                 frame,
                 f'Remembering Faces: {self.face_remembering_enabled}',

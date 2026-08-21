@@ -316,16 +316,24 @@ class FaceAnalyzer:
             alpha=0.7
               )
 
-        plt.legend(*scatter.legend_elements(), title="Face Legend")
-
         unique_clusters = np.unique(clusters)
-        print(unique_clusters)
+        cmap = scatter.cmap
+        norm = scatter.norm
+
+        # Lists for creating the legend for face counts
+        count_labels = []
         
         for cluster_id in unique_clusters:
+            cluster_color = cmap(norm(cluster_id))
+            cluster_count = np.sum(clusters == cluster_id)
+            count_labels.append(f"Face {cluster_id}: Captured {cluster_count} times")
+
+            # Position for face image
             points_in_cluster = embeddings_2d[clusters == cluster_id]
             center_x = np.mean(points_in_cluster[:, 0])
             center_y = np.mean(points_in_cluster[:, 1])
 
+            # Picture to use for cluster will be first instance of face according to DBSCAN
             index_for_face = list(clusters).index(cluster_id)
             first_file_of_face = unknown_faces_files[index_for_face]
             bgr_face = np.load(first_file_of_face)
@@ -333,18 +341,32 @@ class FaceAnalyzer:
             face_image = Image.fromarray(rgb_face)
             face_image = face_image.resize((50, 50), Image.Resampling.LANCZOS)
             
-            imagebox = OffsetImage(face_image, zoom=.5)
+            imagebox = OffsetImage(face_image, zoom=.4)
             ab = AnnotationBbox(imagebox, (center_x, center_y), frameon=True)
+            
+            # Set the frame line color to match the color of its cluster
+            ab.patch.set_edgecolor(cluster_color)
+            ab.patch.set_linewidth(2)
 
             plt.gca().add_artist(ab)
 
-        plt.title('Density Clusters of Unknown faces', fontsize=14, fontweight='bold')
+        # Legend for face counts
+        handles, _ = scatter.legend_elements()
+        plt.legend(
+            handles, 
+            count_labels, 
+            title="Face Legend", 
+            bbox_to_anchor=(1.05, 1), 
+            loc='upper left'
+        )
+
+        plt.title('Clusters of Unknown faces', fontsize=14, fontweight='bold')
         plt.xlabel('t-SNE Axis 1')
         plt.ylabel('t-SNE Axis 2')
         plt.grid(True, linestyle='--', alpha=0.3)
 
         graphs_path = path.join(BASE_DIR, 'data', 'graphs')
-        graph_file_name = f'unknown_faces_graph{len(listdir(graphs_path))}.png'
+        graph_file_name = f'unknown_faces_graph{len(listdir(graphs_path)) + 1}.png'
 
         graph_file_path = path.join(graphs_path, graph_file_name)
         plt.savefig(graph_file_path, dpi=300, bbox_inches='tight')
