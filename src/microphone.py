@@ -128,7 +128,30 @@ class SpeechRecognition:
             A string containing the LLM's response.
         """
         prompt_preset = """
+                        Methods:
+                            Method 1:
+                            def get_name_of_known_face(self, face: np.ndarray) -> str:
+
+                            Gets the name of a known face.
+                            Must only be used with faces that are known!
+
+                            Args:
+                                face: An array that holds the image with a face.
+                            
+                            Returns:
+                                The name of the person with the face as a string.
+                            
+                            Method 2:
+                            def create_graph_of_unknown_faces(self) -> str:
+                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.
+                            
+                                Returns:
+                                    A file path leading to a png of the newly created graph.
+                                    
+
+                            
                         Your name is paper, assist the user.
+                        If the user's prompt requires or includes a method call, respond with only the name of that method.
                         User prompt:
                                 
                         """

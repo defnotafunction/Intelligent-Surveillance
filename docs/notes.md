@@ -77,4 +77,11 @@
 - **Thoughts**: ... 
     
 - **Problems and Fixes**:
-    - The vosk model isn't good at speech reconition, I'm switching to faster whisper.
+    - The vosk model isn't good at speech reconition, I'm switching to the faster whisper library.
+
+## [8/22/2026]
+- **Thoughts**:
+    - Just so your name doesn't get called excessively in a period of time, a known face's name will be called every 500 frames now.
+    
+- **Problems and Fixes**:
+    - My current plan of a thread listening and recognizing speech in the background seems to be expensive, I'll have the listen method only be called when it detects a known face. 

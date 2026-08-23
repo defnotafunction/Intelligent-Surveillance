@@ -7,6 +7,7 @@ from .microphone import SoundAnalyzer, SpeechRecognition
 from .sender import GmailSender
 import logging
 import random
+import numpy as np
 from os import path, listdir
 import pyttsx3
 from sklearn.exceptions import NotFittedError
@@ -49,6 +50,7 @@ class Camera:
             self._controller = None
 
         self._current_controller_input = None
+        self._current_known_face = None
 
         self._speech_recognizer = SpeechRecognition()  # SPEECH TO TEXT
         self._listening_pool = ThreadPoolExecutor(max_workers=1)
@@ -59,6 +61,7 @@ class Camera:
         self._sender = GmailSender()
 
         # BOOLEAN ATTRIBUTES
+        self._known_face_spotted = False
         self._person_is_visible = False
         self.face_remembering_enabled = False  # Determines whether program will begin remembering faces or not
         self._controller_activated_record = False 
@@ -81,6 +84,18 @@ class Camera:
         """Returns a ControllerManager object if a controller is detected, otherwise it returns None. Used to adapt to disconnections and reconnections."""
         return ControllerManager() if get_any_controllers_connected() else None
 
+    def _send_email_of_unknown_faces_graph(self) -> None:
+        """Uses yagmail to send an email that holds the graph of clusters of unknown faces."""
+        try:
+            graph_path = self._face_analyzer.create_graph_of_unknown_faces()
+            self._sender.send(
+                'Unknown Faces Graph',
+                message="Here's a graph of clusters of unknown faces!",
+                file_paths=[graph_path]
+        ) 
+        except ValueError:
+            self.talk("There aren't enough unknown faces stored in order to do that.")
+
     def _handle_controller_events(self) -> None:
         """Executes all controller-related events."""
         if self._controller is not None:
@@ -100,22 +115,14 @@ class Camera:
                 self._sound_analyzer.reset_model()
             elif self._current_controller_input == 'GRAPH UNKNOWN FACES':
                 # T-SNE uses perplexity of 5, if # of unknown faces is lower it raises exception.
-                try:
-                    graph_path = self._face_analyzer.create_graph_of_unknown_faces()
-                    self._sender.send(
-                        'Unknown Faces Graph',
-                        message="Here's a graph of clusters of unknown faces!",
-                        file_paths=[graph_path]
-                ) 
-                except ValueError:
-                    self.talk("There aren't enough unknown faces stored in order to do that.")
+                self._send_email_of_unknown_faces_graph()
 
                 self._current_controller_input = None
 
 
         self._controller = self._get_controller()
 
-    def _handle_pedestrian_detection(self, frame, confidence_threshold: float) -> None:
+    def _handle_pedestrian_detection(self, frame: np.ndarray, confidence_threshold: float) -> None:
         """
         Runs all pedestrian dectection related events.
         
@@ -133,7 +140,7 @@ class Camera:
                 x, y, w, h = box
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-    def _handle_face_detecting(self, frame, frames_ran: int) -> None:
+    def _handle_face_detecting(self, frame: np.array, frames_ran: int) -> None:
         """
         Runs all face dectection related events.
         
@@ -146,6 +153,12 @@ class Camera:
 
         if len(detected_faces) > 0:
             self._person_is_visible = True
+
+        can_analyze_faces = frames_ran % 100 == 0
+
+        if can_analyze_faces:
+            self._known_face_spotted = False
+            self._current_known_face = None
 
         for (x, y, w, h) in detected_faces:
             colored_face = frame[y:y+h, x:x+w]
@@ -163,10 +176,14 @@ class Camera:
                 self.talk(f"This face has been tracked in unknown faces {count} {'time' if count == 1 else 'times'}.")
 
             # Below includes computationally expensive methods that uses Deepface
-            if frames_ran % 100 == 0:
+            if can_analyze_faces:
                 if self._face_analyzer.get_face_is_in_known_faces(colored_face):
+                    self._known_face_spotted = True
+                    self._current_known_face = colored_face
                     person_name = self._face_analyzer.get_name_of_known_face(colored_face)
-                    self.talk(f'Hello {person_name}')
+
+                    if frames_ran % 500 == 0:
+                        self.talk(f'Hello {person_name}')
 
                 elif self._face_analyzer.get_face_is_in_unknown_faces(colored_face): 
                     # Track unknown faces every once in a while
@@ -180,7 +197,7 @@ class Camera:
                     cv2.rectangle(frame, (x, y), (x+w, y+h), (128, 128, 128), 2)
                     self._face_analyzer.save_unknown_face(colored_face)
 
-    def _handle_recording_and_alarm(self, frame, frames_ran: int) -> None:
+    def _handle_recording_and_alarm(self, frame: np.ndarray, frames_ran: int) -> None:
         """
         Handles all necessary logic related to the recording and alarm system.
         
@@ -244,8 +261,11 @@ class Camera:
             self._sound_analyzer.train()
 
     def _handle_recognizing_commands(self) -> None:
-        """Execute methods of the SpeechRecognition class relating to mapping voice inputs to functions"""
-
+        """Execute methods of the SpeechRecognition class relating to mapping voice inputs to functions."""
+        method_map = {
+            'get_name_of_known_face': lambda: self._face_analyzer.get_name_of_known_face(self._current_known_face),
+            'create_graph_of_unknown_faces': self._send_email_of_unknown_faces_graph
+        }
         if not hasattr(self, "_active_listening_future") or self._active_listening_future is None:
             def on_listening_done(future):
                 result = future.result()
@@ -254,8 +274,9 @@ class Camera:
                 self._active_listening_future = None
 
             # Listens concurrently
-            self._active_listening_future = self._listening_pool.submit(self._speech_recognizer.listen)
-            self._active_listening_future.add_done_callback(lambda f: on_listening_done(f))
+            if self._known_face_spotted:
+                self._active_listening_future = self._listening_pool.submit(self._speech_recognizer.listen)
+                self._active_listening_future.add_done_callback(lambda f: on_listening_done(f))
 
         if self._current_words_spoken['words'] is not None:
             spoken_text = self._current_words_spoken['words']
@@ -264,14 +285,15 @@ class Camera:
             
             if self._wake_word.lower() in clean_words:
                 response = self._speech_recognizer.get_llm_response(spoken_text)
-                self.talk(response)
 
-            
-        
-        
+                if response in method_map:
+                    method_to_call = method_map[response]
+                    returned_value = method_to_call()
 
-        
-        
+                    if isinstance(returned_value, str):
+                        self.talk(returned_value)
+                else:
+                    self.talk(response)  
 
     def run(self) -> None:
         """Captures live video frames and detects pedistrians."""

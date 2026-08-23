@@ -249,7 +249,7 @@ class FaceAnalyzer:
     def get_cluster_predictions_of_unknown_faces(self) -> np.ndarray:
         """Uses Standardization and PCA to fit a DBSCAN model on the folder containing unknown faces and returns its predictions."""
         folder_path = path.join(BASE_DIR, 'data', 'face_arrays', 'unknown_faces')
-        pca = PCA(n_components=7)
+        pca = PCA(n_components=8)
         embeddings = self.get_embeddings_of_files_in_directory(folder_path)
         
         embeddings_scaled = StandardScaler().fit_transform(X=embeddings)

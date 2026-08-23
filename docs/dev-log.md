@@ -53,3 +53,8 @@
 - **Work done**: Improved unknown faces graph design, and added a legend that contains the number of instances of each distinct face (according to DBSCAN). Used faster_whisper for speech recognition, Groq for requests to LLM, and threading for the program to listen for speech in the background.
 - **Challenges**: ...
 - **Future steps**: Allow the LLM to call functions or methods, and add pre-defined phrases for the program to listen for. Map a controller input to toggle between using the LLM or pre-defined phrases for commands.
+
+## [8/23/2026]
+- **Work done**: Listening thread only listens for speech when the program detects a known face. LLM can now respond with the name of methods to call.
+- **Challenges**: ...
+- **Future steps**: Implement logic for program responding to pre-defined commands without LLM API requests. Wrap up the project with exeception handling.
