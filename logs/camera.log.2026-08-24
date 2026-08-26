@@ -1,0 +1,1492 @@
+2026-08-24 18:19:17,873 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2026-08-24 18:19:17,875 - DEBUG - send_request_headers.complete
+2026-08-24 18:19:17,875 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2026-08-24 18:19:17,875 - DEBUG - send_request_body.complete
+2026-08-24 18:19:17,876 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2026-08-24 18:19:17,936 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 24 Aug 2026 23:19:18 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"46c-/Ri3DVYcX/7Fjdv5qRKaddABoP0"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6a8cd176-1d85202253ff245c5d00a428;b45de4de-8042-45da-815e-c31ce5d439f3'), (b'RateLimit', b'"api";r=498;t=254'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 2781c4df1d0805ec47a02fbc7d381fd2.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'ORD58-P13'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'we82TO73hWj-SOepdS5hEZwpTndO-3x2aURDF0x2IKsLyWl2MJgydg=='), (b'Strict-Transport-Security', b'max-age=31536000')])
+2026-08-24 18:19:17,937 - INFO - HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-base.en/revision/main "HTTP/1.1 200 OK"
+2026-08-24 18:19:17,938 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2026-08-24 18:19:17,938 - DEBUG - receive_response_body.complete
+2026-08-24 18:19:17,938 - DEBUG - response_closed.started
+2026-08-24 18:19:17,938 - DEBUG - response_closed.complete
+2026-08-24 18:20:14,277 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,278 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,278 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,278 - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x1b7633a5f50 at 1b7a8f00b50>)
+2026-08-24 18:20:14,278 - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x1b7633a5f50 at 1b7a8f00b50>)
+2026-08-24 18:20:14,278 - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2026-08-24 18:20:14,278 - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2026-08-24 18:20:14,278 - DEBUG - Release <POINTER(IUnknown) ptr=0x1b7eee378b0 at 1b7a8f00d50>
+2026-08-24 18:20:14,279 - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2026-08-24 18:20:14,279 - DEBUG - Release <POINTER(IUnknown) ptr=0x1b7633a5f50 at 1b7a8f00c50>
+2026-08-24 18:20:14,279 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:20:14,279 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2026-08-24 18:20:14,279 - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x1b7633a5f50 at 1b7a8f00bd0>
+2026-08-24 18:20:14,279 - DEBUG - Release <POINTER(IDispatch) ptr=0x1b7633a5f50 at 1b7a8f00cd0>
+2026-08-24 18:20:14,280 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1b7eee378b0 at 1b7a8f00dd0>
+2026-08-24 18:20:14,280 - DEBUG - Release <POINTER(ITypeLib) ptr=0x1b79239d910 at 1b7a8f00c50>
+2026-08-24 18:20:14,280 - DEBUG - Release <POINTER(IDispatch) ptr=0x1b7633a5f50 at 1b7a8f00b50>
+2026-08-24 18:20:14,280 - DEBUG - unimplemented method _ISpeechVoiceEvents_VoiceChange called
+2026-08-24 18:20:14,280 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1b7633a5f50 at 1b7a8f00bd0>
+2026-08-24 18:20:14,280 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,280 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,280 - DEBUG - unimplemented method _ISpeechVoiceEvents_Sentence called
+2026-08-24 18:20:14,280 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,280 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,280 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,280 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,280 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,281 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,281 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,432 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,432 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,432 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,433 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,433 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,433 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,433 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,434 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,484 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,484 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,484 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,485 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,485 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,485 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,536 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,536 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,536 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,536 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,536 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,536 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,588 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,588 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,588 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,589 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,589 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,589 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,691 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,691 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,691 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,691 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,692 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,692 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,692 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,692 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,744 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,744 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,744 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,744 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,744 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,744 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,795 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,795 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,795 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,846 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,846 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,846 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,846 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,846 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,846 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,846 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,847 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,898 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,898 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,898 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,898 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,898 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,898 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,948 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,948 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:14,948 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:14,949 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:14,950 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:14,950 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,001 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:15,001 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:15,001 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,001 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:15,001 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:15,001 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,052 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:15,052 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:15,052 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,052 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:15,052 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:15,052 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,103 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:15,103 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:15,103 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,103 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:15,103 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:15,103 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,255 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:15,255 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:20:15,256 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,256 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:15,256 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:20:15,257 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,811 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.AddRef() -> 2
+2026-08-24 18:20:15,811 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 1
+2026-08-24 18:20:15,863 - DEBUG - SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396}
+2026-08-24 18:20:15,864 - DEBUG - CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None)
+2026-08-24 18:20:15,865 - DEBUG - GetBestInterface(<POINTER(IUnknown) ptr=0x1b7662975e0 at 1b7a88bf250>)
+2026-08-24 18:20:15,865 - DEBUG - Does implement IProvideClassInfo
+2026-08-24 18:20:15,866 - DEBUG - Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396}
+2026-08-24 18:20:15,866 - DEBUG - Release <POINTER(IUnknown) ptr=0x1b766297620 at 1b7a8f00cd0>
+2026-08-24 18:20:15,866 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:20:15,866 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'>
+2026-08-24 18:20:15,866 - DEBUG - Final result is <POINTER(ISpeechVoice) ptr=0x1b766297620 at 1b7a8f00dd0>
+2026-08-24 18:20:15,866 - DEBUG - Release <POINTER(IProvideClassInfo) ptr=0x1b766297640 at 1b7a8f006d0>
+2026-08-24 18:20:15,866 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1b7eee377a8 at 1b7a8f00750>
+2026-08-24 18:20:15,867 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1b7eee37800 at 1b7a8f00a50>
+2026-08-24 18:20:15,867 - DEBUG - Release <POINTER(ITypeLib) ptr=0x1b79239d910 at 1b7a8f00cd0>
+2026-08-24 18:20:15,867 - DEBUG - Release <POINTER(IUnknown) ptr=0x1b7662975e0 at 1b7a88bf250>
+2026-08-24 18:20:15,867 - DEBUG - <POINTER(ISpeechVoice) ptr=0x1b766297620 at 1b7a8f00dd0> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2026-08-24 18:20:15,867 - DEBUG - Release <POINTER(IProvideClassInfo2) ptr=0x1b766297640 at 1b7a88bf250>
+2026-08-24 18:20:15,868 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>: _ISpeechVoiceEvents.VoiceChange not implemented
+2026-08-24 18:20:15,868 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>: _ISpeechVoiceEvents.Bookmark not implemented
+2026-08-24 18:20:15,868 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>: _ISpeechVoiceEvents.Sentence not implemented
+2026-08-24 18:20:15,868 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>: _ISpeechVoiceEvents.Phoneme not implemented
+2026-08-24 18:20:15,868 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>: _ISpeechVoiceEvents.Viseme not implemented
+2026-08-24 18:20:15,868 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>: _ISpeechVoiceEvents.AudioLevel not implemented
+2026-08-24 18:20:15,868 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>: _ISpeechVoiceEvents.EnginePrivate not implemented
+2026-08-24 18:20:15,868 - DEBUG - Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2026-08-24 18:20:15,868 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK
+2026-08-24 18:20:15,868 - DEBUG - 2 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>
+2026-08-24 18:20:15,868 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>.AddRef() -> 1
+2026-08-24 18:20:15,870 - DEBUG - Release <POINTER(IConnectionPointContainer) ptr=0x1b766297648 at 1b7a88be2d0>
+2026-08-24 18:20:15,886 - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x1b7662f0cb0 at 1b7a88be2d0>)
+2026-08-24 18:20:15,887 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1b7662f0cb0 at 1b7a88be2d0>
+2026-08-24 18:20:15,887 - DEBUG - wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x1b7662ee800 at 1b7a88be2d0>)
+2026-08-24 18:20:15,888 - DEBUG - Release <POINTER(IUnknown) ptr=0x1b7662fd740 at 1b7a8f00fd0>
+2026-08-24 18:20:15,888 - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x1b7662f08c0 at 1b7a8f011d0>)
+2026-08-24 18:20:15,888 - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x1b7662f08c0 at 1b7a8f011d0>)
+2026-08-24 18:20:15,888 - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2026-08-24 18:20:15,889 - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2026-08-24 18:20:15,889 - DEBUG - Release <POINTER(IUnknown) ptr=0x1b7eee378b0 at 1b7a8f013d0>
+2026-08-24 18:20:15,889 - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2026-08-24 18:20:15,889 - DEBUG - Release <POINTER(IUnknown) ptr=0x1b7662f08c0 at 1b7a8f014d0>
+2026-08-24 18:20:15,889 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:20:15,889 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2026-08-24 18:20:15,890 - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x1b7662f08c0 at 1b7a8f013d0>
+2026-08-24 18:20:15,890 - DEBUG - Release <POINTER(IDispatch) ptr=0x1b7662f08c0 at 1b7a8f01350>
+2026-08-24 18:20:15,890 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1b7eee378b0 at 1b7a8f01450>
+2026-08-24 18:20:15,890 - DEBUG - Release <POINTER(ITypeLib) ptr=0x1b79239d910 at 1b7a8f014d0>
+2026-08-24 18:20:15,890 - DEBUG - Release <POINTER(IDispatch) ptr=0x1b7662f08c0 at 1b7a8f011d0>
+2026-08-24 18:20:15,891 - DEBUG - Release <POINTER(IEnumVARIANT) ptr=0x1b7662fd740 at 1b7a8f01050>
+2026-08-24 18:20:15,891 - DEBUG - Release <POINTER(ISpeechObjectTokens) ptr=0x1b7662ee800 at 1b7a88be2d0>
+2026-08-24 18:20:15,891 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1b7662f08c0 at 1b7a8f013d0>
+2026-08-24 18:20:20,945 - INFO - Processing audio with duration 00:03.344
+2026-08-24 18:20:20,958 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:20:26,718 - INFO - Processing audio with duration 00:03.947
+2026-08-24 18:20:26,723 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:20:27,404 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-48c27004-d393-42b5-bea1-bd0b3725874a', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        pre-programmed response, uh, secret. paper, see my name."}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:20:27,430 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:20:27,430 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:20:27,507 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B7A8FB36B0>
+2026-08-24 18:20:27,507 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001B7A1D489D0> server_hostname='api.groq.com' timeout=5.0
+2026-08-24 18:20:27,530 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B7A1DC1BE0>
+2026-08-24 18:20:27,530 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-08-24 18:20:27,531 - DEBUG - send_request_headers.complete
+2026-08-24 18:20:27,531 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-08-24 18:20:27,531 - DEBUG - send_request_body.complete
+2026-08-24 18:20:27,531 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-08-24 18:20:27,979 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 24 Aug 2026 23:20:28 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'msp'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'8000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'5684'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'17.369s'), (b'x-request-id', b'req_01m0v16hsne1xbt4hjqqpa03e6'), (b'cf-cache-status', b'DYNAMIC'), (b'set-cookie', b'__cf_bm=itPlS1NaNvgohcqo5fQbV8kGXNI1yimUJg1jyaOMBKI-1787613628.2025967-1.0.1.1-xwDIy4zL_MGxDe7je6Qol__t7KG7ZKPekYfK.kENZct8TfCPJS_VVz9MOI38nKf4c5vKH4wjPgksKKat4fsmnbu4SskL6FRrbMdfFBfvn2PIxjctW6L15iRIViGZfm3N; HttpOnly; SameSite=None; Secure; Path=/; Domain=groq.com; Expires=Mon, 24 Aug 2026 23:50:28 GMT'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'a30616784d8e02f1-STL'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-08-24 18:20:27,980 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-24 18:20:27,981 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-08-24 18:20:27,981 - DEBUG - receive_response_body.complete
+2026-08-24 18:20:27,981 - DEBUG - response_closed.started
+2026-08-24 18:20:27,982 - DEBUG - response_closed.complete
+2026-08-24 18:20:27,982 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Mon, 24 Aug 2026 23:20:28 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'server': 'cloudflare', 'vary': 'Origin', 'x-groq-region': 'msp', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '5684', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '17.369s', 'x-request-id': 'req_01m0v16hsne1xbt4hjqqpa03e6', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=itPlS1NaNvgohcqo5fQbV8kGXNI1yimUJg1jyaOMBKI-1787613628.2025967-1.0.1.1-xwDIy4zL_MGxDe7je6Qol__t7KG7ZKPekYfK.kENZct8TfCPJS_VVz9MOI38nKf4c5vKH4wjPgksKKat4fsmnbu4SskL6FRrbMdfFBfvn2PIxjctW6L15iRIViGZfm3N; HttpOnly; SameSite=None; Secure; Path=/; Domain=groq.com; Expires=Mon, 24 Aug 2026 23:50:28 GMT', 'strict-transport-security': 'max-age=15552000', 'content-encoding': 'gzip', 'cf-ray': 'a30616784d8e02f1-STL', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-08-24 18:20:28,008 - DEBUG - Calling CoUninitialize()
+2026-08-24 18:20:28,008 - DEBUG - CoUninitialize() done.
+2026-08-24 18:20:28,008 - DEBUG - close.started
+2026-08-24 18:20:28,010 - DEBUG - close.complete
+2026-08-24 18:20:28,228 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>.Release() -> 0
+2026-08-24 18:20:28,228 - DEBUG - 1 active COM objects: Removed <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D6C5F0>
+2026-08-24 18:20:28,228 - DEBUG - Remaining: [<comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001B7A1D4C1A0>]
+2026-08-24 18:27:56,901 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2026-08-24 18:27:56,902 - DEBUG - send_request_headers.complete
+2026-08-24 18:27:56,902 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2026-08-24 18:27:56,902 - DEBUG - send_request_body.complete
+2026-08-24 18:27:56,902 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2026-08-24 18:27:56,953 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 24 Aug 2026 23:27:57 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"46c-/Ri3DVYcX/7Fjdv5qRKaddABoP0"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6a8cd37d-4969d20c21d3acaa097c7d33;d2f455d2-921d-425c-be6e-b325cfe2d69b'), (b'RateLimit', b'"api";r=498;t=35'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 a47b6cdbaadf18de6b360af380eea05a.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'ORD58-P13'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'qWcD0m5ne5QLf9paHGOdPVkgQUpdFEmzG1YPIwEagz32sxW9V0cX-A=='), (b'Strict-Transport-Security', b'max-age=31536000')])
+2026-08-24 18:27:56,954 - INFO - HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-base.en/revision/main "HTTP/1.1 200 OK"
+2026-08-24 18:27:56,955 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2026-08-24 18:27:56,955 - DEBUG - receive_response_body.complete
+2026-08-24 18:27:56,955 - DEBUG - response_closed.started
+2026-08-24 18:27:56,956 - DEBUG - response_closed.complete
+2026-08-24 18:28:11,934 - INFO - Processing audio with duration 00:04.830
+2026-08-24 18:28:11,940 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:28:12,394 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-1d538cd6-2376-4250-96ab-0007466f879d', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        oh, paper, say my name."}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:28:12,414 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:28:12,414 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:28:12,466 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001AA13DDD880>
+2026-08-24 18:28:12,466 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001AA1374C8D0> server_hostname='api.groq.com' timeout=5.0
+2026-08-24 18:28:12,482 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001AA13DDD5E0>
+2026-08-24 18:28:12,483 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-08-24 18:28:12,483 - DEBUG - send_request_headers.complete
+2026-08-24 18:28:12,483 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-08-24 18:28:12,484 - DEBUG - send_request_body.complete
+2026-08-24 18:28:12,484 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-08-24 18:28:12,925 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 24 Aug 2026 23:28:13 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Server', b'cloudflare'), (b'vary', b'Origin'), (b'x-groq-region', b'msp'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'8000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'5691'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'17.317s'), (b'x-request-id', b'req_01m0v1mqvbew7s436a7mjqpyvx'), (b'cf-cache-status', b'DYNAMIC'), (b'set-cookie', b'__cf_bm=VXTPKn2qC6FPp52S1akT2gc6R0qjtLnbcJcmrPl9yH4-1787614093.1505485-1.0.1.1-43YMTgkFjrBJJWEprlQXMrVAlBBGNPwofCzHi1zyXPhyKJTVuLTSoC0rhK8RZaUfoAKk9sdjKagRpen9EONyCS9SlHECAcn0hfDMDJpHdajxg8iqQIfxssEuxDCoqg8w; HttpOnly; SameSite=None; Secure; Path=/; Domain=groq.com; Expires=Mon, 24 Aug 2026 23:58:13 GMT'), (b'Strict-Transport-Security', b'max-age=15552000'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'a30621d228c68638-STL'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-08-24 18:28:12,925 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-24 18:28:12,927 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-08-24 18:28:12,927 - DEBUG - receive_response_body.complete
+2026-08-24 18:28:12,927 - DEBUG - response_closed.started
+2026-08-24 18:28:12,928 - DEBUG - response_closed.complete
+2026-08-24 18:28:12,928 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Mon, 24 Aug 2026 23:28:13 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'server': 'cloudflare', 'vary': 'Origin', 'x-groq-region': 'msp', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '5691', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '17.317s', 'x-request-id': 'req_01m0v1mqvbew7s436a7mjqpyvx', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=VXTPKn2qC6FPp52S1akT2gc6R0qjtLnbcJcmrPl9yH4-1787614093.1505485-1.0.1.1-43YMTgkFjrBJJWEprlQXMrVAlBBGNPwofCzHi1zyXPhyKJTVuLTSoC0rhK8RZaUfoAKk9sdjKagRpen9EONyCS9SlHECAcn0hfDMDJpHdajxg8iqQIfxssEuxDCoqg8w; HttpOnly; SameSite=None; Secure; Path=/; Domain=groq.com; Expires=Mon, 24 Aug 2026 23:58:13 GMT', 'strict-transport-security': 'max-age=15552000', 'content-encoding': 'gzip', 'cf-ray': 'a30621d228c68638-STL', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-08-24 18:28:13,015 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,015 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,015 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,015 - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x1a9ad4a5f50 at 1aa13e10150>)
+2026-08-24 18:28:13,017 - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x1a9ad4a5f50 at 1aa13e10150>)
+2026-08-24 18:28:13,017 - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2026-08-24 18:28:13,018 - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2026-08-24 18:28:13,018 - DEBUG - Release <POINTER(IUnknown) ptr=0x1aa60d6d710 at 1aa13e10350>
+2026-08-24 18:28:13,018 - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2026-08-24 18:28:13,018 - DEBUG - Release <POINTER(IUnknown) ptr=0x1a9ad4a5f50 at 1aa13e10450>
+2026-08-24 18:28:13,019 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:28:13,019 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2026-08-24 18:28:13,019 - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x1a9ad4a5f50 at 1aa13dcd450>
+2026-08-24 18:28:13,019 - DEBUG - Release <POINTER(IDispatch) ptr=0x1a9ad4a5f50 at 1aa13e102d0>
+2026-08-24 18:28:13,019 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1aa60d6d710 at 1aa13e103d0>
+2026-08-24 18:28:13,019 - DEBUG - Release <POINTER(ITypeLib) ptr=0x1aa06194000 at 1aa13e10450>
+2026-08-24 18:28:13,019 - DEBUG - Release <POINTER(IDispatch) ptr=0x1a9ad4a5f50 at 1aa13e10150>
+2026-08-24 18:28:13,020 - DEBUG - unimplemented method _ISpeechVoiceEvents_VoiceChange called
+2026-08-24 18:28:13,020 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1a9ad4a5f50 at 1aa13dcd450>
+2026-08-24 18:28:13,020 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,070 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,071 - DEBUG - unimplemented method _ISpeechVoiceEvents_Sentence called
+2026-08-24 18:28:13,071 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,071 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,072 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:13,072 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,072 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,072 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:13,072 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,174 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,174 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,174 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,174 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:13,174 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,175 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,175 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:13,175 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,226 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,226 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:13,226 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,277 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,277 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:13,277 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,277 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,277 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:13,277 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,328 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,328 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,328 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,328 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:13,328 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,328 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,329 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:13,329 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,430 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,430 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:13,430 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,430 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,432 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:13,432 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,483 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,483 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:13,483 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,483 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,484 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:13,484 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,584 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,584 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:13,585 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,585 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,585 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:13,586 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,687 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,687 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:13,688 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:13,688 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:13,688 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:13,688 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,040 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,041 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,041 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,041 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,042 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,042 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,042 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,042 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,042 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,042 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,042 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,042 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,042 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,044 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,094 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,094 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,095 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,096 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,096 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,096 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,147 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,148 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,148 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,148 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,149 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,149 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,149 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,149 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,201 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,201 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,201 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,252 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,252 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,252 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,252 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,252 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,252 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,254 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,254 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,304 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,305 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,305 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,305 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,305 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,305 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,356 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,356 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,356 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,356 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,356 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,356 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,408 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,408 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,409 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,409 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,409 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,410 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,410 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,410 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,410 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,410 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,410 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,411 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,411 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,411 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,461 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,461 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,461 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,461 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,461 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,462 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,513 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,513 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,513 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,513 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,513 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,513 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,564 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,564 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,564 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,564 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,565 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,565 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,565 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,565 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,616 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,616 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,616 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,616 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,616 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,616 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,667 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,667 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,668 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,668 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,668 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,668 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,719 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,719 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,719 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,719 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,719 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,719 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,719 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,719 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,820 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,821 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,821 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,821 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,822 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,822 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,822 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,823 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,823 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,823 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,823 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,823 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,875 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,875 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,875 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,875 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,876 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,876 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,926 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,926 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,926 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,926 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,926 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,926 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,926 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,928 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,928 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,928 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,928 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,928 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,979 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,979 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:14,979 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:14,979 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:14,979 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:14,979 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,030 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,030 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:15,030 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,082 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,082 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:15,082 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,082 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,082 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:15,082 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,133 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,133 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:15,134 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,134 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,134 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:15,134 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,235 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,235 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:15,235 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,235 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,236 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:15,236 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,337 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,337 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:28:15,337 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,337 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,337 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:28:15,338 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,892 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.AddRef() -> 2
+2026-08-24 18:28:15,892 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 1
+2026-08-24 18:28:15,942 - DEBUG - SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396}
+2026-08-24 18:28:15,942 - DEBUG - CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None)
+2026-08-24 18:28:15,944 - DEBUG - GetBestInterface(<POINTER(IUnknown) ptr=0x1a9b0497060 at 1aa13e07d50>)
+2026-08-24 18:28:15,944 - DEBUG - Does implement IProvideClassInfo
+2026-08-24 18:28:15,944 - DEBUG - Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396}
+2026-08-24 18:28:15,944 - DEBUG - Release <POINTER(IUnknown) ptr=0x1a9b04970a0 at 1aa13e106d0>
+2026-08-24 18:28:15,944 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:28:15,944 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'>
+2026-08-24 18:28:15,944 - DEBUG - Final result is <POINTER(ISpeechVoice) ptr=0x1a9b04970a0 at 1aa13e10650>
+2026-08-24 18:28:15,945 - DEBUG - Release <POINTER(IProvideClassInfo) ptr=0x1a9b04970c0 at 1aa13e07dd0>
+2026-08-24 18:28:15,945 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1aa60d6d608 at 1aa13e07cd0>
+2026-08-24 18:28:15,945 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1aa60d6d660 at 1aa13e104d0>
+2026-08-24 18:28:15,945 - DEBUG - Release <POINTER(ITypeLib) ptr=0x1aa06194000 at 1aa13e106d0>
+2026-08-24 18:28:15,945 - DEBUG - Release <POINTER(IUnknown) ptr=0x1a9b0497060 at 1aa13e07d50>
+2026-08-24 18:28:15,946 - DEBUG - <POINTER(ISpeechVoice) ptr=0x1a9b04970a0 at 1aa13e10650> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2026-08-24 18:28:15,946 - DEBUG - Release <POINTER(IProvideClassInfo2) ptr=0x1a9b04970c0 at 1aa13dcd450>
+2026-08-24 18:28:15,946 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>: _ISpeechVoiceEvents.VoiceChange not implemented
+2026-08-24 18:28:15,947 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>: _ISpeechVoiceEvents.Bookmark not implemented
+2026-08-24 18:28:15,947 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>: _ISpeechVoiceEvents.Sentence not implemented
+2026-08-24 18:28:15,947 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>: _ISpeechVoiceEvents.Phoneme not implemented
+2026-08-24 18:28:15,947 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>: _ISpeechVoiceEvents.Viseme not implemented
+2026-08-24 18:28:15,947 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>: _ISpeechVoiceEvents.AudioLevel not implemented
+2026-08-24 18:28:15,947 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>: _ISpeechVoiceEvents.EnginePrivate not implemented
+2026-08-24 18:28:15,947 - DEBUG - Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2026-08-24 18:28:15,947 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK
+2026-08-24 18:28:15,947 - DEBUG - 2 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>
+2026-08-24 18:28:15,947 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>.AddRef() -> 1
+2026-08-24 18:28:15,948 - DEBUG - Release <POINTER(IConnectionPointContainer) ptr=0x1a9b04970c8 at 1aa13e07e50>
+2026-08-24 18:28:15,963 - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x1a9b04f0320 at 1aa13e07e50>)
+2026-08-24 18:28:15,964 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1a9b04f0320 at 1aa13e07e50>
+2026-08-24 18:28:15,964 - DEBUG - wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x1a9b04eeb00 at 1aa13e07e50>)
+2026-08-24 18:28:15,965 - DEBUG - Release <POINTER(IUnknown) ptr=0x1a9b04fe420 at 1aa13e10950>
+2026-08-24 18:28:15,965 - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x1a9b04f0710 at 1aa13e10b50>)
+2026-08-24 18:28:15,965 - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x1a9b04f0710 at 1aa13e10b50>)
+2026-08-24 18:28:15,965 - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2026-08-24 18:28:15,965 - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2026-08-24 18:28:15,965 - DEBUG - Release <POINTER(IUnknown) ptr=0x1aa60d6d710 at 1aa13e10d50>
+2026-08-24 18:28:15,966 - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2026-08-24 18:28:15,966 - DEBUG - Release <POINTER(IUnknown) ptr=0x1a9b04f0710 at 1aa13e10e50>
+2026-08-24 18:28:15,966 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:28:15,966 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2026-08-24 18:28:15,966 - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x1a9b04f0710 at 1aa13e10d50>
+2026-08-24 18:28:15,966 - DEBUG - Release <POINTER(IDispatch) ptr=0x1a9b04f0710 at 1aa13e10cd0>
+2026-08-24 18:28:15,966 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1aa60d6d710 at 1aa13e10dd0>
+2026-08-24 18:28:15,966 - DEBUG - Release <POINTER(ITypeLib) ptr=0x1aa06194000 at 1aa13e10e50>
+2026-08-24 18:28:15,966 - DEBUG - Release <POINTER(IDispatch) ptr=0x1a9b04f0710 at 1aa13e10b50>
+2026-08-24 18:28:15,967 - DEBUG - Release <POINTER(IEnumVARIANT) ptr=0x1a9b04fe420 at 1aa13e109d0>
+2026-08-24 18:28:15,967 - DEBUG - Release <POINTER(ISpeechObjectTokens) ptr=0x1a9b04eeb00 at 1aa13e07e50>
+2026-08-24 18:28:15,967 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1a9b04f0710 at 1aa13e10d50>
+2026-08-24 18:28:23,103 - ERROR - Frame failed!
+2026-08-24 18:28:23,167 - ERROR - exception calling callback for <Future at 0x1aa1376c350 state=finished raised OSError>
+Traceback (most recent call last):
+  File "C:\Users\matth\Desktop\projects\Security Camera\src\microphone.py", line 108, in listen
+    audio = self._speech_recognizer.listen(source)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\speech_recognition\__init__.py", line 462, in listen
+    for a in result:
+             ^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\speech_recognition\__init__.py", line 532, in _listen
+    buffer = source.stream.read(source.CHUNK)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\speech_recognition\__init__.py", line 193, in read
+    return self.pyaudio_stream.read(size, exception_on_overflow=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pyaudio\__init__.py", line 570, in read
+    return pa.read_stream(self._stream, num_frames,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno -9999] Unanticipated host error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\matth\Desktop\projects\Security Camera\src\camera.py", line 288, in <lambda>
+    self._active_listening_future.add_done_callback(lambda f: on_listening_done(f))
+                                                              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\Desktop\projects\Security Camera\src\camera.py", line 280, in on_listening_done
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\Desktop\projects\Security Camera\src\microphone.py", line 106, in listen
+    with sr.Microphone() as source:
+         ^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\speech_recognition\__init__.py", line 183, in __exit__
+    self.stream.close()
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\speech_recognition\__init__.py", line 198, in close
+    if not self.pyaudio_stream.is_stopped():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pyaudio\__init__.py", line 515, in is_stopped
+    return pa.is_stream_stopped(self._stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno -9988] Stream closed
+2026-08-24 18:28:23,228 - DEBUG - Calling CoUninitialize()
+2026-08-24 18:28:23,228 - DEBUG - CoUninitialize() done.
+2026-08-24 18:28:23,228 - DEBUG - close.started
+2026-08-24 18:28:23,229 - DEBUG - close.complete
+2026-08-24 18:28:23,479 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>.Release() -> 0
+2026-08-24 18:28:23,483 - DEBUG - 1 active COM objects: Removed <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA1376C9E0>
+2026-08-24 18:28:23,483 - DEBUG - Remaining: [<comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001AA13D8B9B0>]
+2026-08-24 18:28:45,954 - DEBUG - connect_tcp.started host='huggingface.co' port=443 local_address=None timeout=None socket_options=None
+2026-08-24 18:28:45,955 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:29:07,569 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,569 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,569 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,569 - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x2312b4a5f50 at 23211e1d350>)
+2026-08-24 18:29:07,570 - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x2312b4a5f50 at 23211e1d350>)
+2026-08-24 18:29:07,570 - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2026-08-24 18:29:07,570 - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2026-08-24 18:29:07,570 - DEBUG - Release <POINTER(IUnknown) ptr=0x231dee578b0 at 23211e1d550>
+2026-08-24 18:29:07,571 - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2026-08-24 18:29:07,571 - DEBUG - Release <POINTER(IUnknown) ptr=0x2312b4a5f50 at 23211e1d650>
+2026-08-24 18:29:07,571 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:29:07,571 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2026-08-24 18:29:07,571 - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x2312b4a5f50 at 23211e1d550>
+2026-08-24 18:29:07,571 - DEBUG - Release <POINTER(IDispatch) ptr=0x2312b4a5f50 at 23211e1d4d0>
+2026-08-24 18:29:07,571 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x231dee578b0 at 23211e1d5d0>
+2026-08-24 18:29:07,572 - DEBUG - Release <POINTER(ITypeLib) ptr=0x23199bce170 at 23211e1d650>
+2026-08-24 18:29:07,572 - DEBUG - Release <POINTER(IDispatch) ptr=0x2312b4a5f50 at 23211e1d350>
+2026-08-24 18:29:07,572 - DEBUG - unimplemented method _ISpeechVoiceEvents_VoiceChange called
+2026-08-24 18:29:07,572 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x2312b4a5f50 at 23211e1d550>
+2026-08-24 18:29:07,572 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,573 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,573 - DEBUG - unimplemented method _ISpeechVoiceEvents_Sentence called
+2026-08-24 18:29:07,573 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,573 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,573 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:07,573 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,573 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,573 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:07,573 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,674 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,674 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,674 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,675 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:07,675 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,676 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,676 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:07,676 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,727 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,727 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:07,727 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,727 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,727 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:07,727 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,778 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,778 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:07,778 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,778 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,778 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:07,780 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,830 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,830 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:07,830 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,830 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,831 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:07,831 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,982 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,982 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,983 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,983 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:07,983 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:07,984 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:07,984 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:07,985 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,036 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,036 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:08,037 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,037 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,037 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:08,038 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,088 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,089 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:08,089 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,140 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,140 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,140 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,141 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:08,141 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,141 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,142 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:08,142 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,193 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,193 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:08,193 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,194 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,194 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:08,194 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,244 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,244 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:08,244 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,245 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,245 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:08,245 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,296 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,296 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:08,296 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,297 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,297 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:08,297 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,348 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,348 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:08,348 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,348 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,348 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:08,348 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,400 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,400 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:08,400 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,400 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,400 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:08,400 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,552 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,552 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:29:08,553 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:08,553 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:08,553 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:29:08,554 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:09,109 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.AddRef() -> 2
+2026-08-24 18:29:09,109 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 1
+2026-08-24 18:29:09,160 - DEBUG - SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396}
+2026-08-24 18:29:09,160 - DEBUG - CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None)
+2026-08-24 18:29:09,161 - DEBUG - GetBestInterface(<POINTER(IUnknown) ptr=0x2312e59cde0 at 23211e1d050>)
+2026-08-24 18:29:09,161 - DEBUG - Does implement IProvideClassInfo
+2026-08-24 18:29:09,161 - DEBUG - Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396}
+2026-08-24 18:29:09,161 - DEBUG - Release <POINTER(IUnknown) ptr=0x2312e59ce20 at 23211e1d650>
+2026-08-24 18:29:09,161 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:29:09,161 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'>
+2026-08-24 18:29:09,161 - DEBUG - Final result is <POINTER(ISpeechVoice) ptr=0x2312e59ce20 at 23211e1d350>
+2026-08-24 18:29:09,161 - DEBUG - Release <POINTER(IProvideClassInfo) ptr=0x2312e59ce40 at 23211e1cfd0>
+2026-08-24 18:29:09,162 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x231dee577a8 at 23211e1d0d0>
+2026-08-24 18:29:09,162 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x231dee57800 at 23211e1d1d0>
+2026-08-24 18:29:09,162 - DEBUG - Release <POINTER(ITypeLib) ptr=0x23199bce170 at 23211e1d650>
+2026-08-24 18:29:09,162 - DEBUG - Release <POINTER(IUnknown) ptr=0x2312e59cde0 at 23211e1d050>
+2026-08-24 18:29:09,162 - DEBUG - <POINTER(ISpeechVoice) ptr=0x2312e59ce20 at 23211e1d350> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2026-08-24 18:29:09,162 - DEBUG - Release <POINTER(IProvideClassInfo2) ptr=0x2312e59ce40 at 231ee2c38d0>
+2026-08-24 18:29:09,163 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>: _ISpeechVoiceEvents.VoiceChange not implemented
+2026-08-24 18:29:09,163 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>: _ISpeechVoiceEvents.Bookmark not implemented
+2026-08-24 18:29:09,163 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>: _ISpeechVoiceEvents.Sentence not implemented
+2026-08-24 18:29:09,163 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>: _ISpeechVoiceEvents.Phoneme not implemented
+2026-08-24 18:29:09,163 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>: _ISpeechVoiceEvents.Viseme not implemented
+2026-08-24 18:29:09,163 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>: _ISpeechVoiceEvents.AudioLevel not implemented
+2026-08-24 18:29:09,163 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>: _ISpeechVoiceEvents.EnginePrivate not implemented
+2026-08-24 18:29:09,163 - DEBUG - Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2026-08-24 18:29:09,164 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK
+2026-08-24 18:29:09,164 - DEBUG - 2 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>
+2026-08-24 18:29:09,164 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>.AddRef() -> 1
+2026-08-24 18:29:09,165 - DEBUG - Release <POINTER(IConnectionPointContainer) ptr=0x2312e59ce48 at 231ee2c2fd0>
+2026-08-24 18:29:09,177 - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x2312e5f0440 at 231ee2c2fd0>)
+2026-08-24 18:29:09,178 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x2312e5f0440 at 231ee2c2fd0>
+2026-08-24 18:29:09,178 - DEBUG - wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x2312e5eea80 at 231ee2c2fd0>)
+2026-08-24 18:29:09,179 - DEBUG - Release <POINTER(IUnknown) ptr=0x2312e5fd060 at 23211e1d4d0>
+2026-08-24 18:29:09,179 - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x2312e5f0950 at 23211e1d850>)
+2026-08-24 18:29:09,179 - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x2312e5f0950 at 23211e1d850>)
+2026-08-24 18:29:09,179 - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2026-08-24 18:29:09,179 - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2026-08-24 18:29:09,179 - DEBUG - Release <POINTER(IUnknown) ptr=0x231dee578b0 at 23211e1da50>
+2026-08-24 18:29:09,179 - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2026-08-24 18:29:09,180 - DEBUG - Release <POINTER(IUnknown) ptr=0x2312e5f0950 at 23211e1db50>
+2026-08-24 18:29:09,180 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:29:09,180 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2026-08-24 18:29:09,180 - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x2312e5f0950 at 23211e1da50>
+2026-08-24 18:29:09,180 - DEBUG - Release <POINTER(IDispatch) ptr=0x2312e5f0950 at 23211e1d9d0>
+2026-08-24 18:29:09,180 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x231dee578b0 at 23211e1dad0>
+2026-08-24 18:29:09,180 - DEBUG - Release <POINTER(ITypeLib) ptr=0x23199bce170 at 23211e1db50>
+2026-08-24 18:29:09,180 - DEBUG - Release <POINTER(IDispatch) ptr=0x2312e5f0950 at 23211e1d850>
+2026-08-24 18:29:09,180 - DEBUG - Release <POINTER(IEnumVARIANT) ptr=0x2312e5fd060 at 23211e1d750>
+2026-08-24 18:29:09,180 - DEBUG - Release <POINTER(ISpeechObjectTokens) ptr=0x2312e5eea80 at 231ee2c2fd0>
+2026-08-24 18:29:09,180 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x2312e5f0950 at 23211e1da50>
+2026-08-24 18:29:11,789 - INFO - Processing audio with duration 00:00.952
+2026-08-24 18:29:11,793 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:29:14,963 - INFO - Processing audio with duration 00:01.324
+2026-08-24 18:29:14,968 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:29:20,181 - INFO - Processing audio with duration 00:02.113
+2026-08-24 18:29:20,184 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:29:57,178 - DEBUG - Calling CoUninitialize()
+2026-08-24 18:29:57,178 - DEBUG - CoUninitialize() done.
+2026-08-24 18:29:57,384 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>.Release() -> 0
+2026-08-24 18:29:57,384 - DEBUG - 1 active COM objects: Removed <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000023185B8E2A0>
+2026-08-24 18:29:57,384 - DEBUG - Remaining: [<comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x00000231EE063D10>]
+2026-08-24 18:30:12,445 - DEBUG - connect_tcp.started host='huggingface.co' port=443 local_address=None timeout=None socket_options=None
+2026-08-24 18:30:12,445 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:30:19,723 - INFO - Processing audio with duration 00:01.091
+2026-08-24 18:30:19,727 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:30:33,893 - INFO - Processing audio with duration 00:11.401
+2026-08-24 18:30:33,900 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:30:34,338 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-8dbf5002-6d3a-49e8-b6d9-f5636b8b8e28', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        paper, see my name."}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:30:34,353 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:30:34,353 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:30:34,354 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:30:34,354 - DEBUG - Encountered Exception
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-24 18:30:34,428 - DEBUG - 2 retries left
+2026-08-24 18:30:34,428 - INFO - Retrying request to /openai/v1/chat/completions in 0.382865 seconds
+2026-08-24 18:30:34,812 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-8dbf5002-6d3a-49e8-b6d9-f5636b8b8e28', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        paper, see my name."}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:30:34,814 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:30:34,815 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:30:34,821 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:30:34,821 - DEBUG - Encountered Exception
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-24 18:30:34,822 - DEBUG - 1 retry left
+2026-08-24 18:30:34,822 - INFO - Retrying request to /openai/v1/chat/completions in 0.778117 seconds
+2026-08-24 18:30:35,601 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-8dbf5002-6d3a-49e8-b6d9-f5636b8b8e28', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        paper, see my name."}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:30:35,602 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:30:35,603 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:30:35,604 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:30:35,604 - DEBUG - Encountered Exception
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-24 18:30:35,606 - DEBUG - Raising connection error
+2026-08-24 18:30:35,631 - DEBUG - Calling CoUninitialize()
+2026-08-24 18:30:35,631 - DEBUG - CoUninitialize() done.
+2026-08-24 18:31:35,776 - DEBUG - connect_tcp.started host='huggingface.co' port=443 local_address=None timeout=None socket_options=None
+2026-08-24 18:31:35,777 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:31:49,571 - INFO - Processing audio with duration 00:03.274
+2026-08-24 18:31:49,576 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:31:50,005 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-198ed248-4c4a-4860-b420-eb289b6d7908', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        paper, see my name."}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:31:50,021 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:31:50,021 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:31:50,022 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:31:50,022 - DEBUG - Encountered Exception
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-24 18:31:50,025 - DEBUG - 2 retries left
+2026-08-24 18:31:50,025 - INFO - Retrying request to /openai/v1/chat/completions in 0.464147 seconds
+2026-08-24 18:31:50,490 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-198ed248-4c4a-4860-b420-eb289b6d7908', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        paper, see my name."}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:31:50,490 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:31:50,490 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:31:50,490 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:31:50,490 - DEBUG - Encountered Exception
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-24 18:31:50,492 - DEBUG - 1 retry left
+2026-08-24 18:31:50,493 - INFO - Retrying request to /openai/v1/chat/completions in 0.815110 seconds
+2026-08-24 18:31:51,309 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-198ed248-4c4a-4860-b420-eb289b6d7908', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        paper, see my name."}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:31:51,309 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:31:51,309 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:31:51,310 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:31:51,310 - DEBUG - Encountered Exception
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-24 18:31:51,311 - DEBUG - Raising connection error
+2026-08-24 18:31:54,454 - INFO - Processing audio with duration 00:02.902
+2026-08-24 18:31:54,457 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:31:55,361 - DEBUG - Compression ratio threshold is not met with temperature 0.0 (7.133333 > 2.400000)
+2026-08-24 18:31:56,293 - DEBUG - Compression ratio threshold is not met with temperature 0.2 (15.000000 > 2.400000)
+2026-08-24 18:31:56,945 - DEBUG - Compression ratio threshold is not met with temperature 0.4 (9.823529 > 2.400000)
+2026-08-24 18:31:58,256 - DEBUG - Compression ratio threshold is not met with temperature 0.6 (9.895833 > 2.400000)
+2026-08-24 18:31:58,989 - DEBUG - Compression ratio threshold is not met with temperature 0.8 (2.791045 > 2.400000)
+2026-08-24 18:31:58,989 - DEBUG - Log probability threshold is not met with temperature 0.8 (-1.057256 < -1.000000)
+2026-08-24 18:31:58,989 - DEBUG - No speech threshold is met (0.740256 > 0.600000)
+2026-08-24 18:32:14,300 - INFO - Processing audio with duration 00:06.014
+2026-08-24 18:32:14,305 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:34:05,315 - INFO - Processing audio with duration 00:01.649
+2026-08-24 18:34:05,317 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:34:05,737 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-fadb5836-2cf6-4323-a507-4d150fb5a27d', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        paper say my name!"}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:34:05,738 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:34:05,738 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:34:05,738 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:34:05,738 - DEBUG - Encountered Exception
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-24 18:34:05,740 - DEBUG - 2 retries left
+2026-08-24 18:34:05,741 - INFO - Retrying request to /openai/v1/chat/completions in 0.379253 seconds
+2026-08-24 18:34:06,121 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-fadb5836-2cf6-4323-a507-4d150fb5a27d', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        paper say my name!"}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:34:06,121 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:34:06,121 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:34:06,122 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:34:06,122 - DEBUG - Encountered Exception
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-24 18:34:06,123 - DEBUG - 1 retry left
+2026-08-24 18:34:06,123 - INFO - Retrying request to /openai/v1/chat/completions in 0.827446 seconds
+2026-08-24 18:34:06,952 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-fadb5836-2cf6-4323-a507-4d150fb5a27d', 'content': None, 'json_data': {'messages': [{'role': 'user', 'content': "\n                        Methods:\n                            Method 1:\n                            def get_name_of_known_face(self, face: np.ndarray) -> str:\n\n                            Gets the name of a known face.\n                            Must only be used with faces that are known!\n\n                            Args:\n                                face: An array that holds the image with a face.\n                            \n                            Returns:\n                                The name of the person with the face as a string.\n                            \n                            Method 2:\n                            def create_graph_of_unknown_faces(self) -> str:\n                                Use t-sne and density clustering to create a file with a graph with every unknown face as a point and color-coded clusters.\n                            \n                                Returns:\n                                    A file path leading to a png of the newly created graph.\n                                    \n\n                            \n                        Your name is paper, assist the user.\n                        If the user's prompt requires or includes a method call, respond with only the name of that method.\n                        User prompt:\n                                \n                        paper say my name!"}], 'model': 'openai/gpt-oss-20b', 'max_completion_tokens': 2048, 'reasoning_effort': 'medium', 'stop': None, 'stream': False, 'temperature': 1, 'top_p': 1}}
+2026-08-24 18:34:06,952 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2026-08-24 18:34:06,952 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2026-08-24 18:34:06,953 - DEBUG - connect_tcp.failed exception=ConnectError(gaierror(11001, 'getaddrinfo failed'))
+2026-08-24 18:34:06,953 - DEBUG - Encountered Exception
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\groq\_base_client.py", line 1007, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\matth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-08-24 18:34:06,954 - DEBUG - Raising connection error
+2026-08-24 18:34:07,062 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,062 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,063 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,063 - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x21e9c5a5f50 at 21f15d49c50>)
+2026-08-24 18:34:07,063 - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x21e9c5a5f50 at 21f15d49c50>)
+2026-08-24 18:34:07,063 - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2026-08-24 18:34:07,064 - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2026-08-24 18:34:07,064 - DEBUG - Release <POINTER(IUnknown) ptr=0x21f5fd5aa30 at 21f15d49650>
+2026-08-24 18:34:07,064 - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2026-08-24 18:34:07,064 - DEBUG - Release <POINTER(IUnknown) ptr=0x21e9c5a5f50 at 21f15d4a250>
+2026-08-24 18:34:07,064 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:34:07,065 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2026-08-24 18:34:07,065 - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x21e9c5a5f50 at 21f159ffd50>
+2026-08-24 18:34:07,065 - DEBUG - Release <POINTER(IDispatch) ptr=0x21e9c5a5f50 at 21f15d49e50>
+2026-08-24 18:34:07,065 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x21f5fd5aa30 at 21f15d48c50>
+2026-08-24 18:34:07,065 - DEBUG - Release <POINTER(ITypeLib) ptr=0x21f16e65e20 at 21f15d4a250>
+2026-08-24 18:34:07,065 - DEBUG - Release <POINTER(IDispatch) ptr=0x21e9c5a5f50 at 21f15d49c50>
+2026-08-24 18:34:07,066 - DEBUG - unimplemented method _ISpeechVoiceEvents_VoiceChange called
+2026-08-24 18:34:07,066 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x21e9c5a5f50 at 21f159ffd50>
+2026-08-24 18:34:07,066 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,066 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,066 - DEBUG - unimplemented method _ISpeechVoiceEvents_Sentence called
+2026-08-24 18:34:07,066 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,066 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,066 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,066 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,066 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,066 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,066 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,218 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,218 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,218 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,218 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,218 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,218 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,218 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,220 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,270 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,270 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,270 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,270 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,270 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,270 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,372 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,372 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,372 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,422 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,422 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,422 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,423 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,423 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,423 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,423 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,423 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,475 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,475 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,475 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,475 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,475 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,475 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,526 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,526 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,526 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,527 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,527 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,527 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,577 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,577 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,577 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,578 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,578 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,578 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,578 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,578 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,578 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,578 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,578 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,578 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,679 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,680 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,680 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,680 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,680 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,680 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,782 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,782 - DEBUG - unimplemented method _ISpeechVoiceEvents_Phoneme called
+2026-08-24 18:34:07,782 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:07,782 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:07,782 - DEBUG - unimplemented method _ISpeechVoiceEvents_Viseme called
+2026-08-24 18:34:07,782 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:08,336 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.AddRef() -> 2
+2026-08-24 18:34:08,336 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 1
+2026-08-24 18:34:08,387 - DEBUG - SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396}
+2026-08-24 18:34:08,388 - DEBUG - CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None)
+2026-08-24 18:34:08,388 - DEBUG - GetBestInterface(<POINTER(IUnknown) ptr=0x21e9f59cde0 at 21f15d493d0>)
+2026-08-24 18:34:08,388 - DEBUG - Does implement IProvideClassInfo
+2026-08-24 18:34:08,390 - DEBUG - Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396}
+2026-08-24 18:34:08,390 - DEBUG - Release <POINTER(IUnknown) ptr=0x21e9f59ce20 at 21f15d49e50>
+2026-08-24 18:34:08,390 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:34:08,390 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'>
+2026-08-24 18:34:08,391 - DEBUG - Final result is <POINTER(ISpeechVoice) ptr=0x21e9f59ce20 at 21f15d48c50>
+2026-08-24 18:34:08,391 - DEBUG - Release <POINTER(IProvideClassInfo) ptr=0x21e9f59ce40 at 21f15d497d0>
+2026-08-24 18:34:08,391 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x21f5fd5a928 at 21f15d48750>
+2026-08-24 18:34:08,391 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x21f5fd5a980 at 21f15d4a250>
+2026-08-24 18:34:08,392 - DEBUG - Release <POINTER(ITypeLib) ptr=0x21f16e65e20 at 21f15d49e50>
+2026-08-24 18:34:08,392 - DEBUG - Release <POINTER(IUnknown) ptr=0x21e9f59cde0 at 21f15d493d0>
+2026-08-24 18:34:08,392 - DEBUG - <POINTER(ISpeechVoice) ptr=0x21e9f59ce20 at 21f15d48c50> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2026-08-24 18:34:08,392 - DEBUG - Release <POINTER(IProvideClassInfo2) ptr=0x21e9f59ce40 at 21f159ffd50>
+2026-08-24 18:34:08,392 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>: _ISpeechVoiceEvents.VoiceChange not implemented
+2026-08-24 18:34:08,393 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>: _ISpeechVoiceEvents.Bookmark not implemented
+2026-08-24 18:34:08,393 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>: _ISpeechVoiceEvents.Sentence not implemented
+2026-08-24 18:34:08,393 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>: _ISpeechVoiceEvents.Phoneme not implemented
+2026-08-24 18:34:08,393 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>: _ISpeechVoiceEvents.Viseme not implemented
+2026-08-24 18:34:08,393 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>: _ISpeechVoiceEvents.AudioLevel not implemented
+2026-08-24 18:34:08,393 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>: _ISpeechVoiceEvents.EnginePrivate not implemented
+2026-08-24 18:34:08,393 - DEBUG - Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2026-08-24 18:34:08,393 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK
+2026-08-24 18:34:08,394 - DEBUG - 2 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>
+2026-08-24 18:34:08,394 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>.AddRef() -> 1
+2026-08-24 18:34:08,395 - DEBUG - Release <POINTER(IConnectionPointContainer) ptr=0x21e9f59ce48 at 21f15d48a50>
+2026-08-24 18:34:08,410 - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x21e9f5f0200 at 21f15d48a50>)
+2026-08-24 18:34:08,410 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x21e9f5f0200 at 21f15d48a50>
+2026-08-24 18:34:08,411 - DEBUG - wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x21e9f5eec80 at 21f15d48a50>)
+2026-08-24 18:34:08,411 - DEBUG - Release <POINTER(IUnknown) ptr=0x21e9f5fe100 at 21f15d49950>
+2026-08-24 18:34:08,412 - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x21e9f5f0560 at 21f15d4a750>)
+2026-08-24 18:34:08,412 - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x21e9f5f0560 at 21f15d4a750>)
+2026-08-24 18:34:08,412 - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2026-08-24 18:34:08,412 - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2026-08-24 18:34:08,413 - DEBUG - Release <POINTER(IUnknown) ptr=0x21f5fd5aa30 at 21f15d492d0>
+2026-08-24 18:34:08,413 - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2026-08-24 18:34:08,413 - DEBUG - Release <POINTER(IUnknown) ptr=0x21e9f5f0560 at 21f15d4a3d0>
+2026-08-24 18:34:08,413 - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2026-08-24 18:34:08,413 - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2026-08-24 18:34:08,413 - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x21e9f5f0560 at 21f15d492d0>
+2026-08-24 18:34:08,413 - DEBUG - Release <POINTER(IDispatch) ptr=0x21e9f5f0560 at 21f15d4a650>
+2026-08-24 18:34:08,413 - DEBUG - Release <POINTER(ITypeInfo) ptr=0x21f5fd5aa30 at 21f15d49f50>
+2026-08-24 18:34:08,413 - DEBUG - Release <POINTER(ITypeLib) ptr=0x21f16e65e20 at 21f15d4a3d0>
+2026-08-24 18:34:08,413 - DEBUG - Release <POINTER(IDispatch) ptr=0x21e9f5f0560 at 21f15d4a750>
+2026-08-24 18:34:08,413 - DEBUG - Release <POINTER(IEnumVARIANT) ptr=0x21e9f5fe100 at 21f15d4a550>
+2026-08-24 18:34:08,414 - DEBUG - Release <POINTER(ISpeechObjectTokens) ptr=0x21e9f5eec80 at 21f15d48a50>
+2026-08-24 18:34:08,414 - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x21e9f5f0560 at 21f15d492d0>
+2026-08-24 18:34:17,748 - INFO - Processing audio with duration 00:10.356
+2026-08-24 18:34:17,756 - DEBUG - Processing segment at 00:00.000
+2026-08-24 18:34:18,240 - DEBUG - Calling CoUninitialize()
+2026-08-24 18:34:18,240 - DEBUG - CoUninitialize() done.
+2026-08-24 18:34:18,458 - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>.Release() -> 0
+2026-08-24 18:34:18,458 - DEBUG - 1 active COM objects: Removed <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F1571F3B0>
+2026-08-24 18:34:18,458 - DEBUG - Remaining: [<comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000021F15D7D430>]

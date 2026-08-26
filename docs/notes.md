@@ -85,3 +85,9 @@
     
 - **Problems and Fixes**:
     - My current plan of a thread listening and recognizing speech in the background seems to be expensive, I'll have the listen method only be called when it detects a known face. 
+
+## [8/26/2026]
+- **Thoughts**:
+    - Adding in a feature where preset commands can be called if the LLM isn't available or using it triggers an exception of some type.
+    - Wrapping the project up, creating features in case and implementing exception handling:
+        - If sending an email with reports triggers an exception because of internet connection, we store contents of the email in a file that will be used to recreate the email once the user connects to the internet again.

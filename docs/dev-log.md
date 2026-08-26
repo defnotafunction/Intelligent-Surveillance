@@ -58,3 +58,8 @@
 - **Work done**: Listening thread only listens for speech when the program detects a known face. LLM can now respond with the name of methods to call.
 - **Challenges**: ...
 - **Future steps**: Implement logic for program responding to pre-defined commands without LLM API requests. Wrap up the project with exeception handling.
+
+## [8/26/2026]
+- **Work done**: Wrapping the project up, implementing exception handling for sending emails and listening for commands.
+- **Challenges**: ...
+- **Future steps**: Continue to polish the project.

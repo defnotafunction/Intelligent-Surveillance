@@ -69,6 +69,7 @@ Security Camera/
 |   `-- audios/
 |       `-- security-alarm.mp3
 |-- data/
+|   |-- emaildata/
 |   |-- face_arrays/
 |   |   |-- known_faces/
 |   |   `-- unknown_faces/

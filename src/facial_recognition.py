@@ -22,7 +22,7 @@ class FaceAnalyzer:
             min_samples=1,  # One face can be its own cluster
             n_jobs=-1  # Uses all processors
         )
-        self.create_missing_folders_and_files()
+        self._create_missing_folders_and_files()
         self.deepface_model_name = 'SFace'
         known_face_data_path = path.join(BASE_DIR, 'data', 'face_to_data', 'known_face_data.json')
 
@@ -33,7 +33,7 @@ class FaceAnalyzer:
         except json.JSONDecodeError:
             self.data_of_known_faces = {}
 
-    def create_missing_folders_and_files(self) -> None:
+    def _create_missing_folders_and_files(self) -> None:
         """Creates folders and files that the FaceAnalyzer class needs to use."""
 
         required_folders = [

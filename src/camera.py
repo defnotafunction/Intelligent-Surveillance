@@ -12,6 +12,7 @@ from os import path, listdir
 import pyttsx3
 from sklearn.exceptions import NotFittedError
 from concurrent.futures import ThreadPoolExecutor
+from groq import APIConnectionError
 
 SRC_DIR = path.dirname(path.abspath(__file__)) 
 BASE_DIR = path.dirname(SRC_DIR)
@@ -262,10 +263,18 @@ class Camera:
 
     def _handle_recognizing_commands(self) -> None:
         """Execute methods of the SpeechRecognition class relating to mapping voice inputs to functions."""
+        # FOR LLM API REQUESTS
         method_map = {
             'get_name_of_known_face': lambda: self._face_analyzer.get_name_of_known_face(self._current_known_face),
             'create_graph_of_unknown_faces': self._send_email_of_unknown_faces_graph
         }
+
+        # FOR PRESET COMMANDS
+        command_map = {
+            'say my name': lambda: self._face_analyzer.get_name_of_known_face(self._current_known_face),
+            'email unknown faces cluster': self._send_email_of_unknown_faces_graph
+        }
+
         if not hasattr(self, "_active_listening_future") or self._active_listening_future is None:
             def on_listening_done(future):
                 result = future.result()
@@ -284,17 +293,32 @@ class Camera:
             clean_words = [word.lower().strip(",.?!") for word in spoken_text.split()]  # Remove punctuation
             
             if self._wake_word.lower() in clean_words:
-                response = self._speech_recognizer.get_llm_response(spoken_text)
+                try: 
+                    response = self._speech_recognizer.get_llm_response(spoken_text)
 
-                if response in method_map:
-                    method_to_call = method_map[response]
-                    returned_value = method_to_call()
+                    if response in method_map:
+                        method_to_call = method_map[response]
+                        returned_value = method_to_call()
+    
+                        if isinstance(returned_value, str):
+                            self.talk(returned_value)
+                    else:
+                        self.talk(response)  
 
-                    if isinstance(returned_value, str):
-                        self.talk(returned_value)
-                else:
-                    self.talk(response)  
+                except:  # Manual Phrases are used as a fallback
+                    selected_command = None
+                    string_clean_words = ' '.join(clean_words)
 
+                    for phrase, method in command_map.items():
+                        if phrase in string_clean_words:
+                            selected_command = method
+
+                    if selected_command is not None:
+                        returned_value = selected_command()
+
+                        if isinstance(returned_value, str):
+                            self.talk(returned_value)
+        
     def run(self) -> None:
         """Captures live video frames and detects pedistrians."""
         frames_ran = 0
@@ -317,6 +341,10 @@ class Camera:
             self._handle_sound_analysis()
 
             self._handle_recognizing_commands()
+
+            # Send emails that failed to send
+            if frames_ran % 1000 == 0:
+                self._sender.send_pending_emails()
             
             cv2.putText(
                 frame,
